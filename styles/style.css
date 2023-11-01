@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+body {
+  height: 100vh;
+}
+
 .sr-only {
   clip: rect(0, 0, 0, 0);
   position: absolute;
@@ -19,5 +23,123 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: 100;
+  src: url("../assets/roboto-light.woff2");
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: 200;
+  src: url("../assets/roboto-regular.woff2");
+}
+
+@font-face {
+  font-family: 'roboto';
+  font-weight: 300;
+  src: url("../assets/roboto-bold.woff2");
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+li {
+  font-family: 'roboto';
+}
+
+#television {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+#television .tv {
+  position: relative;
+}
+
+#television .tv .frame {
+  background-color: #583523;
+  width: 40rem;
+  aspect-ratio: 1.5/1;
+  position: relative;
+  border-radius: 0.3rem;
+  outline: 3px outset #000000;
+}
+
+#television .tv .frame .inside {
+  width: 94%;
+  aspect-ratio: 1.5/1;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  border-radius: 0.5rem;
+  outline: 3px solid #000000;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: repeating-linear-gradient(45deg, #b4b4b4 25%, transparent 25%, transparent 75%, #b4b4b4 75%, #b4b4b4), repeating-linear-gradient(45deg, #b4b4b4 25%, #cdcdcd 25%, #cdcdcd 75%, #b4b4b4 75%, #b4b4b4);
+  background-position: 0 0, 10px 10px;
+  background-size: 3px 7px;
+}
+
+#television .tv .frame .inside .screen {
+  position: relative;
+  width: 65%;
+  aspect-ratio: 1.2/1;
+  background-color: #818181;
+  left: 7%;
+  top: 10%;
+  border-radius: 50% / 10%;
+}
+
+#television .tv .frame .inside .screen::before {
+  content: '';
+  position: absolute;
+  top: 8.9%;
+  bottom: 8.9%;
+  right: -4.6%;
+  left: -4.6%;
+  background-color: inherit;
+  border-radius: 5% / 50%;
+}
+
+#television .tv .bottom {
+  height: 2.3rem;
+  background-color: #583523;
+  width: 34rem;
+  bottom: -2.3rem;
+  position: absolute;
+  left: 3rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #000000), color-stop(60%, #583523), to(#583523));
+  background-image: linear-gradient(180deg, #000000 60%, #583523 60%, #583523 100%);
+}
+
+#television .tv .bottom::before, #television .tv .bottom::after {
+  content: '';
+  width: 2rem;
+  height: 0.3rem;
+  background-color: #000000;
+  position: absolute;
+  bottom: -0.3rem;
+}
+
+#television .tv .bottom::before {
+  left: 1.2rem;
+}
+
+#television .tv .bottom::after {
+  right: 1.2rem;
 }
 /*# sourceMappingURL=style.css.map */
