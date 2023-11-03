@@ -1,105 +1,143 @@
 //   code inspiration for patterns https://www.magicpattern.design/tools/css-backgrounds
 
 #television {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    transform: scale(1.1);
 
-  .tv {
-    position: relative;
+    .tv {
+        position: relative;
 
-    .frame {
-      background-color: $brown;
-      width: 40rem;
-      aspect-ratio: 1.5/1;
-      position: relative;
-      border-radius: 0.3rem;
-      outline: 3px outset $black;
+        .top {
+            // .antenna-straight {
+            //     width: 0;
+            //     height: 0;
+            //     border-left: 0.35rem solid transparent;
+            //     border-right: 0.35rem solid transparent;
+            //     border-bottom: 12rem solid lighten($screen-color, 30%);
+            //     position: absolute;
+            //     top: -8rem;
+            //     left: 17rem;
+            //     transform: rotate(-20deg);
+            // }
 
-      .inside {
-        width: 94%;
-        aspect-ratio: 1.5/1;
-        position: absolute;
-        top: 3%;
-        left: 3%;
-        border-radius: 0.5rem;
-        outline: 3px solid $black;
-        background-color: #e5e5f7;
-        opacity: 0.8;
-        background-image: repeating-linear-gradient(
-            45deg,
-            lighten($metallic, 10%) 25%,
-            transparent 25%,
-            transparent 75%,
-            lighten($metallic, 10%) 75%,
-            lighten($metallic, 10%)
-          ),
-          repeating-linear-gradient(
-            45deg,
-            lighten($metallic, 10%) 25%,
-            lighten($metallic, 20%) 25%,
-            lighten($metallic, 20%) 75%,
-            lighten($metallic, 10%) 75%,
-            lighten($metallic, 10%)
-          );
-        background-position: 0 0, 10px 10px;
-        background-size: 3px 7px;
+            .bubble-container {
+                width: 7rem;
+                aspect-ratio: 2/1;
+                background-color: darken($frame-color, 10%);
+                border-radius: 10rem 10rem 0 0;
+                position: relative;
+                top: 0;
+                outline: $outline-tv;
+                left: calc(50% - 3.5rem);
+                overflow: hidden;
 
-        .screen {
-          position: relative;
-          width: 65%;
-          aspect-ratio: 1.2/1;
-          background-color: darken($metallic, 10%);
-          left: 7%;
-          top: 10%;
-          border-radius: 50% / 10%;
-
-          &::before {
-            content: '';
-            position: absolute;
-            top: 8.9%;
-            bottom: 8.9%;
-            right: -4.6%;
-            left: -4.6%;
-            background-color: inherit;
-            border-radius: 5% / 50%;
-          }
+                .bubble {
+                    position: absolute;
+                    background-color: $frame-color;
+                    border-radius: 50%;
+                    width: 8rem;
+                    aspect-ratio: 1;
+                    left: -1.5rem;
+                    bottom: -0.75rem;
+                }
+            }
         }
-      }
+
+        .frame {
+            position: relative;
+            width: 40rem;
+            background-color: $frame-color;
+            border-radius: 1.5rem;
+            aspect-ratio: 1.5/1;
+            outline: $outline-tv;
+            box-shadow: inset $box-shadow-tv;
+
+            .screen,
+            .side {
+                position: absolute;
+                top: 3.5rem;
+                height: 23rem;
+                top: 2rem;
+                border-radius: 1.5rem;
+                outline: $outline-tv;
+            }
+
+            .screen {
+                position: relative;
+                width: 63%;
+                background-color: $screen-color;
+                left: 2rem;
+                overflow: hidden;
+                box-shadow: $box-shadow-tv;
+
+                &::before,
+                &::after {
+                    content: '';
+                    border-radius: 50%;
+                    background-color: lighten($screen-color, 40%);
+                    aspect-ratio: 1/1.5;
+                    position: absolute;
+                    transform: rotate(40deg);
+                    z-index: -100;
+                }
+
+                &::before {
+                    top: 7%;
+                    left: 20%;
+                    width: 3rem;
+                }
+
+                &::after {
+                    top: 28%;
+                    left: 10%;
+                    width: 1.5rem;
+                }
+
+                .bubble {
+                    position: absolute;
+                    border-radius: 50%;
+                    width: 50rem;
+                    aspect-ratio: 1;
+                    background-color: lighten($screen-color, 30%);
+                    bottom: 5rem;
+                    left: -17rem;
+                    outline: $outline-tv;
+                    z-index: -100;
+                }
+            }
+
+            .side {
+                width: 23%;
+                background-color: $side-color;
+                right: 2rem;
+                box-shadow: $box-shadow-tv;
+            }
+        }
+
+        .bottom {
+            position: relative;
+
+            &::before,
+            &::after {
+                content: '';
+                width: 3.25rem;
+                aspect-ratio: 2.5/1;
+                background-color: $screen-color;
+                outline: $outline-tv;
+                position: absolute;
+                top: 3px;
+            }
+
+            &::before {
+                left: 10%;
+            }
+
+            &::after {
+                right: 10%;
+            }
+        }
     }
-
-    .bottom {
-      height: 2.3rem;
-      background-color: $brown;
-      width: 34rem;
-      bottom: -2.3rem;
-      position: absolute;
-      left: 3rem;
-      background-image: linear-gradient(
-        180deg,
-        $black 60%,
-        $brown 60%,
-        $brown 100%
-      );
-
-      &::before,
-      &::after {
-        content: '';
-        width: 2rem;
-        height: 0.3rem;
-        background-color: $black;
-        position: absolute;
-        bottom: -0.3rem;
-      }
-
-      &::before {
-        left: 1.2rem;
-      }
-
-      &::after {
-        right: 1.2rem;
-      }
-    }
-  }
 }

@@ -15,13 +15,13 @@ body {
 }
 
 .sr-only {
-  clip: rect(0, 0, 0, 0);
   position: absolute;
-  margin: -1px;
-  border: 0;
-  padding: 0;
   width: 1px;
   height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   overflow: hidden;
 }
 
@@ -64,82 +64,141 @@ li {
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #television .tv {
   position: relative;
 }
 
+#television .tv .top .bubble-container {
+  width: 7rem;
+  aspect-ratio: 2/1;
+  background-color: #171822;
+  border-radius: 10rem 10rem 0 0;
+  position: relative;
+  top: 0;
+  outline: 2.5px solid #000000;
+  left: calc(50% - 3.5rem);
+  overflow: hidden;
+}
+
+#television .tv .top .bubble-container .bubble {
+  position: absolute;
+  background-color: #2b2d41;
+  border-radius: 50%;
+  width: 8rem;
+  aspect-ratio: 1;
+  left: -1.5rem;
+  bottom: -0.75rem;
+}
+
 #television .tv .frame {
-  background-color: #583523;
+  position: relative;
   width: 40rem;
+  background-color: #2b2d41;
+  border-radius: 1.5rem;
   aspect-ratio: 1.5/1;
-  position: relative;
-  border-radius: 0.3rem;
-  outline: 3px outset #000000;
+  outline: 2.5px solid #000000;
+  -webkit-box-shadow: inset 0.6rem 0.6rem #54587e;
+          box-shadow: inset 0.6rem 0.6rem #54587e;
 }
 
-#television .tv .frame .inside {
-  width: 94%;
-  aspect-ratio: 1.5/1;
+#television .tv .frame .screen,
+#television .tv .frame .side {
   position: absolute;
-  top: 3%;
-  left: 3%;
-  border-radius: 0.5rem;
-  outline: 3px solid #000000;
-  background-color: #e5e5f7;
-  opacity: 0.8;
-  background-image: repeating-linear-gradient(45deg, #b4b4b4 25%, transparent 25%, transparent 75%, #b4b4b4 75%, #b4b4b4), repeating-linear-gradient(45deg, #b4b4b4 25%, #cdcdcd 25%, #cdcdcd 75%, #b4b4b4 75%, #b4b4b4);
-  background-position: 0 0, 10px 10px;
-  background-size: 3px 7px;
+  top: 3.5rem;
+  height: 23rem;
+  top: 2rem;
+  border-radius: 1.5rem;
+  outline: 2.5px solid #000000;
 }
 
-#television .tv .frame .inside .screen {
+#television .tv .frame .screen {
   position: relative;
-  width: 65%;
-  aspect-ratio: 1.2/1;
-  background-color: #818181;
-  left: 7%;
-  top: 10%;
-  border-radius: 50% / 10%;
+  width: 63%;
+  background-color: #515158;
+  left: 2rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0.6rem 0.6rem #54587e;
+          box-shadow: 0.6rem 0.6rem #54587e;
 }
 
-#television .tv .frame .inside .screen::before {
+#television .tv .frame .screen::before, #television .tv .frame .screen::after {
   content: '';
+  border-radius: 50%;
+  background-color: #b8b8bd;
+  aspect-ratio: 1/1.5;
   position: absolute;
-  top: 8.9%;
-  bottom: 8.9%;
-  right: -4.6%;
-  left: -4.6%;
-  background-color: inherit;
-  border-radius: 5% / 50%;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+  z-index: -100;
+}
+
+#television .tv .frame .screen::before {
+  top: 7%;
+  left: 20%;
+  width: 3rem;
+}
+
+#television .tv .frame .screen::after {
+  top: 28%;
+  left: 10%;
+  width: 1.5rem;
+}
+
+#television .tv .frame .screen .bubble {
+  position: absolute;
+  border-radius: 50%;
+  width: 50rem;
+  aspect-ratio: 1;
+  background-color: #9d9da5;
+  bottom: 5rem;
+  left: -17rem;
+  outline: 2.5px solid #000000;
+  z-index: -100;
+}
+
+#television .tv .frame .side {
+  width: 23%;
+  background-color: #70769b;
+  right: 2rem;
+  -webkit-box-shadow: 0.6rem 0.6rem #54587e;
+          box-shadow: 0.6rem 0.6rem #54587e;
 }
 
 #television .tv .bottom {
-  height: 2.3rem;
-  background-color: #583523;
-  width: 34rem;
-  bottom: -2.3rem;
-  position: absolute;
-  left: 3rem;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(60%, #000000), color-stop(60%, #583523), to(#583523));
-  background-image: linear-gradient(180deg, #000000 60%, #583523 60%, #583523 100%);
+  position: relative;
 }
 
 #television .tv .bottom::before, #television .tv .bottom::after {
   content: '';
-  width: 2rem;
-  height: 0.3rem;
-  background-color: #000000;
+  width: 3.25rem;
+  aspect-ratio: 2.5/1;
+  background-color: #515158;
+  outline: 2.5px solid #000000;
   position: absolute;
-  bottom: -0.3rem;
+  top: 3px;
 }
 
 #television .tv .bottom::before {
-  left: 1.2rem;
+  left: 10%;
 }
 
 #television .tv .bottom::after {
-  right: 1.2rem;
+  right: 10%;
+}
+
+#content {
+  position: relative;
+  height: 100%;
+}
+
+#content svg {
+  position: absolute;
+  bottom: 0;
+  -webkit-filter: drop-shadow(0px 0px 45px #d5dfff);
+          filter: drop-shadow(0px 0px 45px #d5dfff);
 }
 /*# sourceMappingURL=style.css.map */

@@ -8,5 +8,9 @@ $xl: 1200px;
 
 $black: #000000;
 $white: #ffffff;
-$brown: rgb(88, 53, 35);
-$metallic: rgb(154, 154, 154);
+$frame-color: rgb(43, 45, 65);
+$screen-color: rgb(81, 81, 88);
+$side-color: rgb(112, 118, 155);
+
+$outline-tv: 2.5px solid $black;
+$box-shadow-tv: 0.6rem 0.6rem lighten($frame-color, 20%);
