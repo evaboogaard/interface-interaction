@@ -1,3 +1,2 @@
-console.log('het werkt');
-
 import './particles.js';
+import './planets.js';

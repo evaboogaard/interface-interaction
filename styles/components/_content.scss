@@ -1,0 +1,43 @@
+.baby {
+    transform: translate(-100vw, 30vh);
+    transition: 1s ease-out;
+    transition-delay: 0.5s;
+    position: absolute;
+    background-color: $planet-one-primary;
+    width: 100vw;
+    height: 10vh;
+    z-index: 120;
+
+    &.shown {
+        transform: translate(0vw, 30vh);
+    }
+
+    .stripe-1,
+    .stripe-2 {
+        width: 100%;
+        height: 10vh;
+        position: absolute;
+    }
+
+    .stripe-1 {
+        background-color: $planet-one-secondary;
+        transform: translate(-100vw, 10vh);
+        transition: 2s ease-out;
+        transition-delay: 0.6s;
+
+        &.shown {
+            transform: translate(0vw, 10vh);
+        }
+    }
+
+    .stripe-2 {
+        background-color: $planet-one-tertiary;
+        transform: translate(-100vw, 20vh);
+        transition: 2s ease-out;
+        transition-delay: 0.7s;
+
+        &.shown {
+            transform: translate(0vw, 20vh);
+        }
+    }
+}
