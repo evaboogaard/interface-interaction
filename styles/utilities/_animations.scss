@@ -1,0 +1,31 @@
+@keyframes space-wobble {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(3px);
+    }
+    50% {
+        transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes bojack-glow {
+    0% {
+        filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.18));
+    }
+
+    100% {
+        filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    }
+}

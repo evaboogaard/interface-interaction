@@ -1,142 +1,133 @@
-//   code inspiration for patterns https://www.magicpattern.design/tools/css-backgrounds
-
 #television {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    transform: translateY(40%);
+    height: 100%;
+    background-color: $frame-color;
+    display: flex;
+    justify-content: space-between;
 
-    .tv {
-        position: relative;
+    .screen {
+        width: 80%;
+        height: 90%;
+        background-color: $screen-color;
+        transform: translate(4%, 5%);
+        border-radius: 1rem;
+        overflow: hidden;
 
-        .top {
-            // .antenna-straight {
-            //     width: 0;
-            //     height: 0;
-            //     border-left: 0.35rem solid transparent;
-            //     border-right: 0.35rem solid transparent;
-            //     border-bottom: 12rem solid lighten($screen-color, 30%);
-            //     position: absolute;
-            //     top: -8rem;
-            //     left: 17rem;
-            //     transform: rotate(-20deg);
-            // }
+        #particles-js {
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+        }
 
-            .bubble-container {
-                width: 7rem;
-                aspect-ratio: 2/1;
-                background-color: darken($frame-color, 10%);
-                border-radius: 10rem 10rem 0 0;
-                position: relative;
-                top: 0;
-                outline: $outline-tv;
-                left: calc(50% - 3.5rem);
-                overflow: hidden;
+        svg {
+            z-index: 100;
+            position: absolute;
+            bottom: 0;
+            animation: bojack-glow 5s infinite;
+        }
 
-                .bubble {
-                    position: absolute;
-                    background-color: $frame-color;
-                    border-radius: 50%;
-                    width: 8rem;
-                    aspect-ratio: 1;
-                    left: -1.5rem;
-                    bottom: -0.75rem;
+        .planets {
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            button {
+                width: auto;
+                position: absolute;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                z-index: 100;
+
+                &:first-of-type {
+                    height: 10%;
+                    transform: translate(2vw, 20vh);
+
+                    img {
+                        animation-delay: -1s;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    height: 9%;
+                    transform: translate(15vw, 30vh);
+
+                    img {
+                        animation-delay: -2.5s;
+                    }
+                }
+
+                &:nth-of-type(3) {
+                    height: 13%;
+                    transform: translate(25vw, 15vh);
+
+                    img {
+                        animation-delay: -0.7s;
+                    }
+                }
+
+                &:nth-of-type(4) {
+                    height: 10%;
+                    transform: translate(38vw, 35vh);
+
+                    img {
+                        animation-delay: 3s;
+                    }
+                }
+
+                &:nth-of-type(5) {
+                    height: 12%;
+                    transform: translate(45vw, 20vh);
+
+                    img {
+                        animation-delay: -5.4s;
+                    }
+                }
+
+                &:nth-of-type(6) {
+                    height: 12%;
+                    transform: translate(67vw, 30vh);
+
+                    img {
+                        animation-delay: -4.2s;
+                    }
+                }
+
+                img {
+                    height: 100%;
+                    width: auto;
+                    animation: space-wobble 6s infinite linear;
+                    transition: 0.5s ease-out;
+                }
+
+                &:hover {
+                    img {
+                        animation-play-state: paused;
+                        scale: 1.1;
+                    }
                 }
             }
         }
+    }
 
-        .frame {
-            position: relative;
-            width: 40rem;
-            background-color: $frame-color;
-            border-radius: 1.5rem;
-            aspect-ratio: 1.5/1;
-            outline: $outline-tv;
-            box-shadow: inset $box-shadow-tv;
+    .side {
+        width: 12.5%;
+        height: 90%;
+        transform: translate(-10%, 5%);
 
-            .screen,
-            .side {
-                position: absolute;
-                top: 3.5rem;
-                height: 23rem;
-                top: 2rem;
-                border-radius: 1.5rem;
-                outline: $outline-tv;
+        button {
+            width: 90%;
+            aspect-ratio: 1;
+            background-color: darken($frame-color, 10%);
+            border: none;
+            border-radius: 50%;
+
+            &:first-of-type {
+                transform: translateY(90%);
             }
 
-            .screen {
-                position: relative;
-                width: 63%;
-                background-color: $screen-color;
-                left: 2rem;
-                overflow: hidden;
-                box-shadow: $box-shadow-tv;
-
-                &::before,
-                &::after {
-                    content: '';
-                    border-radius: 50%;
-                    background-color: lighten($screen-color, 40%);
-                    aspect-ratio: 1/1.5;
-                    position: absolute;
-                    transform: rotate(40deg);
-                    z-index: -100;
-                }
-
-                &::before {
-                    top: 7%;
-                    left: 20%;
-                    width: 3rem;
-                }
-
-                &::after {
-                    top: 28%;
-                    left: 10%;
-                    width: 1.5rem;
-                }
-
-                .bubble {
-                    position: absolute;
-                    border-radius: 50%;
-                    width: 50rem;
-                    aspect-ratio: 1;
-                    background-color: lighten($screen-color, 30%);
-                    bottom: 5rem;
-                    left: -17rem;
-                    outline: $outline-tv;
-                    z-index: -100;
-                }
-            }
-
-            .side {
-                width: 23%;
-                background-color: $side-color;
-                right: 2rem;
-                box-shadow: $box-shadow-tv;
-            }
-        }
-
-        .bottom {
-            position: relative;
-
-            &::before,
-            &::after {
-                content: '';
-                width: 3.25rem;
-                aspect-ratio: 2.5/1;
-                background-color: $screen-color;
-                outline: $outline-tv;
-                position: absolute;
-                top: 3px;
-            }
-
-            &::before {
-                left: 10%;
-            }
-
-            &::after {
-                right: 10%;
+            &:last-of-type {
+                transform: translateY(100%);
             }
         }
     }
