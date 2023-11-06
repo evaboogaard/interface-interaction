@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    transform: scale(1.1);
+    width: 100%;
+    transform: translateY(40%);
 
     .tv {
         position: relative;

@@ -12,6 +12,7 @@
 
 body {
   height: 100vh;
+  background-color: #070400;
 }
 
 .sr-only {
@@ -63,9 +64,9 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  width: 100%;
+  -webkit-transform: translateY(40%);
+          transform: translateY(40%);
 }
 
 #television .tv {
@@ -200,5 +201,37 @@ li {
   bottom: 0;
   -webkit-filter: drop-shadow(0px 0px 45px #d5dfff);
           filter: drop-shadow(0px 0px 45px #d5dfff);
+  z-index: 100;
+}
+
+#content .star-bg {
+  height: 100%;
+}
+
+#content .stars button {
+  z-index: 100;
+  width: 0.25rem;
+  aspect-ratio: 1;
+  background-color: #fffae0;
+  position: absolute;
+  border-radius: 50%;
+  border: none;
+}
+
+#content .stars button:first-of-type {
+  left: 20%;
+  top: 50%;
+}
+
+#content .stars button:nth-of-type(2) {
+  left: 30%;
+  top: 40%;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }
 /*# sourceMappingURL=style.css.map */
