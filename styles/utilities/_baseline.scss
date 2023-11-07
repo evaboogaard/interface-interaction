@@ -25,21 +25,15 @@ body {
 }
 
 @font-face {
-    font-family: 'roboto';
+    font-family: 'mono';
     font-weight: 100;
-    src: url('../assets/roboto-light.woff2');
+    src: url('../assets/mono-light.woff2');
 }
 
 @font-face {
-    font-family: 'roboto';
+    font-family: 'mono';
     font-weight: 200;
-    src: url('../assets/roboto-regular.woff2');
-}
-
-@font-face {
-    font-family: 'roboto';
-    font-weight: 300;
-    src: url('../assets/roboto-bold.woff2');
+    src: url('../assets/mono-bold.woff2');
 }
 
 h1,
@@ -49,5 +43,5 @@ h4,
 p,
 a,
 li {
-    font-family: 'roboto';
+    font-family: 'mono', monospace;
 }

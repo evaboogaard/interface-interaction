@@ -26,21 +26,15 @@ body {
 }
 
 @font-face {
-  font-family: 'roboto';
+  font-family: 'mono';
   font-weight: 100;
-  src: url("../assets/roboto-light.woff2");
+  src: url("../assets/mono-light.woff2");
 }
 
 @font-face {
-  font-family: 'roboto';
+  font-family: 'mono';
   font-weight: 200;
-  src: url("../assets/roboto-regular.woff2");
-}
-
-@font-face {
-  font-family: 'roboto';
-  font-weight: 300;
-  src: url("../assets/roboto-bold.woff2");
+  src: url("../assets/mono-bold.woff2");
 }
 
 h1,
@@ -50,7 +44,7 @@ h4,
 p,
 a,
 li {
-  font-family: 'roboto';
+  font-family: 'mono', monospace;
 }
 
 @-webkit-keyframes space-wobble {
@@ -398,119 +392,151 @@ li {
           transform: translateY(100%);
 }
 
-.childhood,
-.teen {
+.childhood {
   position: absolute;
-  z-index: 120;
-  -webkit-transform: translate(-130%, -100%);
-          transform: translate(-130%, -100%);
-  -webkit-transition: 2s ease-out;
-  transition: 2s ease-out;
-  opacity: 0;
-}
-
-.childhood.shown,
-.teen.shown {
-  -webkit-transform: translate(0, 30%);
-          transform: translate(0, 30%);
-  opacity: 1;
-}
-
-.childhood.shown > section > section,
-.teen.shown > section > section {
-  -webkit-transform: translate(10%, -1.5%);
-          transform: translate(10%, -1.5%);
-  opacity: 1;
-}
-
-.childhood > section,
-.teen > section {
-  position: relative;
-}
-
-.childhood > section h2,
-.teen > section h2 {
-  position: absolute;
-  right: 5%;
-  top: -1rem;
-  font-weight: 100;
-  z-index: 140;
-}
-
-.childhood > section img,
-.teen > section img {
-  width: 100%;
-  position: relative;
   z-index: 130;
-}
-
-@media (min-width: 992px) {
-  .childhood > section img,
-  .teen > section img {
-    width: 80%;
-    left: 0;
-  }
-}
-
-.childhood > section > section,
-.teen > section > section {
-  position: absolute;
-  height: inherit;
   width: 80%;
-  z-index: 110;
-  -webkit-transform: translate(10%, -101.5%);
-          transform: translate(10%, -101.5%);
-  opacity: 0;
-  -webkit-transition: 1s ease-out;
-  transition: 1s ease-out;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
+  height: 80%;
 }
 
-@media (min-width: 992px) {
-  .childhood > section > section,
-  .teen > section > section {
-    width: 60%;
-    left: 0;
+.childhood > section {
+  position: relative;
+  -webkit-transform: translate(10%, 40vh);
+          transform: translate(10%, 40vh);
+}
+
+.childhood > section > section:first-of-type {
+  top: -9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.childhood > section > section:first-of-type img {
+  position: absolute;
+  width: 20rem;
+  height: 8rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1rem;
+}
+
+.childhood > section > section:first-of-type img:first-of-type {
+  top: -9rem;
+  left: 0;
+  -webkit-animation: floating-images 5s infinite linear;
+          animation: floating-images 5s infinite linear;
+}
+
+.childhood > section > section:first-of-type img:nth-of-type(2) {
+  top: -16rem;
+  -webkit-animation: floating-images 5s -1.67s infinite linear;
+          animation: floating-images 5s -1.67s infinite linear;
+}
+
+.childhood > section > section:first-of-type img:nth-of-type(3) {
+  top: -9rem;
+  right: 0;
+  -webkit-animation: floating-images 5s -3.34s infinite linear;
+          animation: floating-images 5s -3.34s infinite linear;
+}
+
+.childhood > section > section:last-of-type {
+  margin-top: 1rem;
+  padding: 2rem;
+  background-color: #070400;
+  outline: 1rem solid #070400;
+  border: 2px solid #aeaaa5;
+}
+
+.childhood > section > section:last-of-type h2 {
+  position: absolute;
+  text-transform: uppercase;
+  color: transparent;
+}
+
+.childhood > section > section:last-of-type h2::before {
+  content: attr(data-text);
+  position: absolute;
+  border-bottom: 2px solid #aeaaa5;
+  color: #aeaaa5;
+  overflow: hidden;
+  border-right: 1px solid #000;
+  -webkit-animation: type 2s steps(9) forwards;
+          animation: type 2s steps(9) forwards;
+  white-space: nowrap;
+}
+
+.childhood > section > section:last-of-type ul {
+  padding-top: 2rem;
+}
+
+.childhood > section > section:last-of-type ul li {
+  color: #aeaaa5;
+  padding: 0.5rem 0;
+}
+
+@-webkit-keyframes floating-images {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: 0 0 0.5rem #aeaaa581;
+            box-shadow: 0 0 0.5rem #aeaaa581;
+  }
+  50% {
+    -webkit-transform: translateY(-1rem);
+            transform: translateY(-1rem);
+    -webkit-box-shadow: 0 0 2rem #aeaaa581;
+            box-shadow: 0 0 2rem #aeaaa581;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: 0 0 0.5rem #aeaaa581;
+            box-shadow: 0 0 0.5rem #aeaaa581;
   }
 }
 
-.childhood > section > section ul,
-.teen > section > section ul {
-  padding: 1rem 2rem;
+@keyframes floating-images {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: 0 0 0.5rem #aeaaa581;
+            box-shadow: 0 0 0.5rem #aeaaa581;
+  }
+  50% {
+    -webkit-transform: translateY(-1rem);
+            transform: translateY(-1rem);
+    -webkit-box-shadow: 0 0 2rem #aeaaa581;
+            box-shadow: 0 0 2rem #aeaaa581;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    -webkit-box-shadow: 0 0 0.5rem #aeaaa581;
+            box-shadow: 0 0 0.5rem #aeaaa581;
+  }
 }
 
-.childhood > section > section ul li,
-.teen > section > section ul li {
-  font-size: 0.9rem;
-  padding: 0.3rem;
-  z-index: 110;
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
-.childhood h2 {
-  color: #aeaaa5;
-}
-
-.childhood img {
-  -webkit-box-shadow: 0 0 4rem #aeaaa5;
-          box-shadow: 0 0 4rem #aeaaa5;
-}
-
-.childhood section > section {
-  background-color: #91857a;
-}
-
-.teen h2 {
-  color: #68d4de;
-}
-
-.teen img {
-  -webkit-box-shadow: 0 0 4rem #68d4de;
-          box-shadow: 0 0 4rem #68d4de;
-}
-
-.teen section > section {
-  background-color: #5fc1cc;
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 #particles-js {
