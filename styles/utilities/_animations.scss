@@ -29,3 +29,30 @@
         filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
     }
 }
+
+@keyframes floating-images {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
+    }
+
+    50% {
+        transform: translateY(-1rem);
+        box-shadow: 0 0 2rem $planet-one-box-shadow;
+    }
+
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
+    }
+}
+
+@keyframes type {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

@@ -3,6 +3,14 @@
     z-index: 130;
     width: 80%;
     height: 80%;
+    transform: translate(-100vw, -100vh);
+    opacity: 0;
+    transition: 2s ease-out;
+
+    &.shown {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
 
     > section {
         position: relative;
@@ -46,6 +54,7 @@
             background-color: $screen-color;
             outline: 1rem solid $screen-color;
             border: 2px solid $planet-one-primary;
+            border-radius: 1rem;
 
             h2 {
                 position: absolute;
@@ -72,32 +81,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes floating-images {
-    0% {
-        transform: translateY(0);
-        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
-    }
-
-    50% {
-        transform: translateY(-1rem);
-        box-shadow: 0 0 2rem $planet-one-box-shadow;
-    }
-
-    100% {
-        transform: translateY(0);
-        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
-    }
-}
-
-@keyframes type {
-    0% {
-        width: 0;
-    }
-
-    100% {
-        width: 100%;
     }
 }
