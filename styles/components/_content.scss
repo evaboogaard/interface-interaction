@@ -1,43 +1,97 @@
-.baby {
-    transform: translate(-100vw, 30vh);
-    transition: 1s ease-out;
-    transition-delay: 0.5s;
+.childhood,
+.teen {
     position: absolute;
-    background-color: $planet-one-primary;
-    width: 100vw;
-    height: 10vh;
     z-index: 120;
+    transform: translate(-130%, -100%);
+    transition: 2s ease-out;
+    opacity: 0;
 
     &.shown {
-        transform: translate(0vw, 30vh);
+        transform: translate(0, 30%);
+        opacity: 1;
+
+        > section {
+            > section {
+                transform: translate(10%, -1.5%);
+                opacity: 1;
+            }
+        }
     }
 
-    .stripe-1,
-    .stripe-2 {
-        width: 100%;
-        height: 10vh;
-        position: absolute;
+    > section {
+        position: relative;
+
+        h2 {
+            position: absolute;
+            right: 5%;
+            top: -1rem;
+            font-weight: 100;
+            z-index: 140;
+        }
+
+        img {
+            width: 100%;
+            position: relative;
+            z-index: 130;
+
+            @media (min-width: $lg) {
+                width: 80%;
+                left: 0;
+            }
+        }
+
+        > section {
+            position: absolute;
+            height: inherit;
+            width: 80%;
+            z-index: 110;
+            transform: translate(10%, -101.5%);
+            opacity: 0;
+            transition: 1s ease-out;
+            transition-delay: 1s;
+
+            @media (min-width: $lg) {
+                width: 60%;
+                left: 0;
+            }
+
+            ul {
+                padding: 1rem 2rem;
+
+                li {
+                    font-size: $font-size-small;
+                    padding: 0.3rem;
+                    z-index: 110;
+                }
+            }
+        }
+    }
+}
+
+.childhood {
+    h2 {
+        color: $planet-one-primary;
     }
 
-    .stripe-1 {
+    img {
+        box-shadow: 0 0 4rem $planet-one-primary;
+    }
+
+    section > section {
         background-color: $planet-one-secondary;
-        transform: translate(-100vw, 10vh);
-        transition: 2s ease-out;
-        transition-delay: 0.6s;
+    }
+}
 
-        &.shown {
-            transform: translate(0vw, 10vh);
-        }
+.teen {
+    h2 {
+        color: $planet-two-primary;
     }
 
-    .stripe-2 {
-        background-color: $planet-one-tertiary;
-        transform: translate(-100vw, 20vh);
-        transition: 2s ease-out;
-        transition-delay: 0.7s;
+    img {
+        box-shadow: 0 0 4rem $planet-two-primary;
+    }
 
-        &.shown {
-            transform: translate(0vw, 20vh);
-        }
+    section > section {
+        background-color: $planet-two-secondary;
     }
 }

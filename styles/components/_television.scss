@@ -57,10 +57,10 @@
                     &.clicked {
                         scale: 2;
                         z-index: 150;
-                        transform: translate(-3vw, 20vh);
+                        transform: translate(-3vw, 0vh) rotate(360deg);
 
                         &:hover {
-                            transform: translate(-2vw, 20vh);
+                            transform: translate(-2vw, 1vh) rotate(360deg);
                         }
 
                         img {
@@ -77,6 +77,21 @@
                     img {
                         animation-delay: -2.5s;
                     }
+
+                    &.clicked {
+                        scale: 2;
+                        z-index: 150;
+                        transform: translate(-3vw, 0vh) rotate(360deg);
+
+                        &:hover {
+                            transform: translate(-2vw, 1vh) rotate(360deg);
+                        }
+
+                        img {
+                            scale: 2;
+                            animation: none;
+                        }
+                    }
                 }
 
                 &:nth-of-type(3) {
@@ -85,6 +100,21 @@
 
                     img {
                         animation-delay: -0.7s;
+                    }
+
+                    &.clicked {
+                        scale: 2;
+                        z-index: 150;
+                        transform: translate(-3vw, 0vh) rotate(360deg);
+
+                        &:hover {
+                            transform: translate(-2vw, 1vh) rotate(360deg);
+                        }
+
+                        img {
+                            scale: 2;
+                            animation: none;
+                        }
                     }
                 }
 
@@ -95,6 +125,21 @@
                     img {
                         animation-delay: 3s;
                     }
+
+                    &.clicked {
+                        scale: 2;
+                        z-index: 150;
+                        transform: translate(-3vw, 0vh) rotate(360deg);
+
+                        &:hover {
+                            transform: translate(-2vw, 1vh) rotate(360deg);
+                        }
+
+                        img {
+                            scale: 2;
+                            animation: none;
+                        }
+                    }
                 }
 
                 &:nth-of-type(5) {
@@ -104,6 +149,21 @@
                     img {
                         animation-delay: -5.4s;
                     }
+
+                    &.clicked {
+                        scale: 2;
+                        z-index: 150;
+                        transform: translate(-3vw, 0vh) rotate(360deg);
+
+                        &:hover {
+                            transform: translate(-2vw, 1vh) rotate(360deg);
+                        }
+
+                        img {
+                            scale: 2;
+                            animation: none;
+                        }
+                    }
                 }
 
                 &:nth-of-type(6) {
@@ -112,6 +172,21 @@
 
                     img {
                         animation-delay: -4.2s;
+                    }
+
+                    &.clicked {
+                        scale: 2;
+                        z-index: 150;
+                        transform: translate(-3vw, 0vh) rotate(360deg);
+
+                        &:hover {
+                            transform: translate(-2vw, 1vh) rotate(360deg);
+                        }
+
+                        img {
+                            scale: 2;
+                            animation: none;
+                        }
                     }
                 }
 

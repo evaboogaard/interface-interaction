@@ -198,13 +198,13 @@ li {
 #television .screen .planets button:first-of-type.clicked {
   scale: 2;
   z-index: 150;
-  -webkit-transform: translate(-3vw, 20vh);
-          transform: translate(-3vw, 20vh);
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
 }
 
 #television .screen .planets button:first-of-type.clicked:hover {
-  -webkit-transform: translate(-2vw, 20vh);
-          transform: translate(-2vw, 20vh);
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
 }
 
 #television .screen .planets button:first-of-type.clicked img {
@@ -224,6 +224,24 @@ li {
           animation-delay: -2.5s;
 }
 
+#television .screen .planets button:nth-of-type(2).clicked {
+  scale: 2;
+  z-index: 150;
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(2).clicked:hover {
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(2).clicked img {
+  scale: 2;
+  -webkit-animation: none;
+          animation: none;
+}
+
 #television .screen .planets button:nth-of-type(3) {
   height: 13%;
   -webkit-transform: translate(25vw, 15vh);
@@ -233,6 +251,24 @@ li {
 #television .screen .planets button:nth-of-type(3) img {
   -webkit-animation-delay: -0.7s;
           animation-delay: -0.7s;
+}
+
+#television .screen .planets button:nth-of-type(3).clicked {
+  scale: 2;
+  z-index: 150;
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(3).clicked:hover {
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(3).clicked img {
+  scale: 2;
+  -webkit-animation: none;
+          animation: none;
 }
 
 #television .screen .planets button:nth-of-type(4) {
@@ -246,6 +282,24 @@ li {
           animation-delay: 3s;
 }
 
+#television .screen .planets button:nth-of-type(4).clicked {
+  scale: 2;
+  z-index: 150;
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(4).clicked:hover {
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(4).clicked img {
+  scale: 2;
+  -webkit-animation: none;
+          animation: none;
+}
+
 #television .screen .planets button:nth-of-type(5) {
   height: 12%;
   -webkit-transform: translate(45vw, 20vh);
@@ -257,6 +311,24 @@ li {
           animation-delay: -5.4s;
 }
 
+#television .screen .planets button:nth-of-type(5).clicked {
+  scale: 2;
+  z-index: 150;
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(5).clicked:hover {
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(5).clicked img {
+  scale: 2;
+  -webkit-animation: none;
+          animation: none;
+}
+
 #television .screen .planets button:nth-of-type(6) {
   height: 12%;
   -webkit-transform: translate(67vw, 30vh);
@@ -266,6 +338,24 @@ li {
 #television .screen .planets button:nth-of-type(6) img {
   -webkit-animation-delay: -4.2s;
           animation-delay: -4.2s;
+}
+
+#television .screen .planets button:nth-of-type(6).clicked {
+  scale: 2;
+  z-index: 150;
+  -webkit-transform: translate(-3vw, 0vh) rotate(360deg);
+          transform: translate(-3vw, 0vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(6).clicked:hover {
+  -webkit-transform: translate(-2vw, 1vh) rotate(360deg);
+          transform: translate(-2vw, 1vh) rotate(360deg);
+}
+
+#television .screen .planets button:nth-of-type(6).clicked img {
+  scale: 2;
+  -webkit-animation: none;
+          animation: none;
 }
 
 #television .screen .planets button img {
@@ -308,60 +398,119 @@ li {
           transform: translateY(100%);
 }
 
-.baby {
-  -webkit-transform: translate(-100vw, 30vh);
-          transform: translate(-100vw, 30vh);
+.childhood,
+.teen {
+  position: absolute;
+  z-index: 120;
+  -webkit-transform: translate(-130%, -100%);
+          transform: translate(-130%, -100%);
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
+  opacity: 0;
+}
+
+.childhood.shown,
+.teen.shown {
+  -webkit-transform: translate(0, 30%);
+          transform: translate(0, 30%);
+  opacity: 1;
+}
+
+.childhood.shown > section > section,
+.teen.shown > section > section {
+  -webkit-transform: translate(10%, -1.5%);
+          transform: translate(10%, -1.5%);
+  opacity: 1;
+}
+
+.childhood > section,
+.teen > section {
+  position: relative;
+}
+
+.childhood > section h2,
+.teen > section h2 {
+  position: absolute;
+  right: 5%;
+  top: -1rem;
+  font-weight: 100;
+  z-index: 140;
+}
+
+.childhood > section img,
+.teen > section img {
+  width: 100%;
+  position: relative;
+  z-index: 130;
+}
+
+@media (min-width: 992px) {
+  .childhood > section img,
+  .teen > section img {
+    width: 80%;
+    left: 0;
+  }
+}
+
+.childhood > section > section,
+.teen > section > section {
+  position: absolute;
+  height: inherit;
+  width: 80%;
+  z-index: 110;
+  -webkit-transform: translate(10%, -101.5%);
+          transform: translate(10%, -101.5%);
+  opacity: 0;
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
-  position: absolute;
-  background-color: #aeaaa5;
-  width: 100vw;
-  height: 10vh;
-  z-index: 120;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
-.baby.shown {
-  -webkit-transform: translate(0vw, 30vh);
-          transform: translate(0vw, 30vh);
+@media (min-width: 992px) {
+  .childhood > section > section,
+  .teen > section > section {
+    width: 60%;
+    left: 0;
+  }
 }
 
-.baby .stripe-1,
-.baby .stripe-2 {
-  width: 100%;
-  height: 10vh;
-  position: absolute;
+.childhood > section > section ul,
+.teen > section > section ul {
+  padding: 1rem 2rem;
 }
 
-.baby .stripe-1 {
+.childhood > section > section ul li,
+.teen > section > section ul li {
+  font-size: 0.9rem;
+  padding: 0.3rem;
+  z-index: 110;
+}
+
+.childhood h2 {
+  color: #aeaaa5;
+}
+
+.childhood img {
+  -webkit-box-shadow: 0 0 4rem #aeaaa5;
+          box-shadow: 0 0 4rem #aeaaa5;
+}
+
+.childhood section > section {
   background-color: #91857a;
-  -webkit-transform: translate(-100vw, 10vh);
-          transform: translate(-100vw, 10vh);
-  -webkit-transition: 2s ease-out;
-  transition: 2s ease-out;
-  -webkit-transition-delay: 0.6s;
-          transition-delay: 0.6s;
 }
 
-.baby .stripe-1.shown {
-  -webkit-transform: translate(0vw, 10vh);
-          transform: translate(0vw, 10vh);
+.teen h2 {
+  color: #68d4de;
 }
 
-.baby .stripe-2 {
-  background-color: #8f7a64;
-  -webkit-transform: translate(-100vw, 20vh);
-          transform: translate(-100vw, 20vh);
-  -webkit-transition: 2s ease-out;
-  transition: 2s ease-out;
-  -webkit-transition-delay: 0.7s;
-          transition-delay: 0.7s;
+.teen img {
+  -webkit-box-shadow: 0 0 4rem #68d4de;
+          box-shadow: 0 0 4rem #68d4de;
 }
 
-.baby .stripe-2.shown {
-  -webkit-transform: translate(0vw, 20vh);
-          transform: translate(0vw, 20vh);
+.teen section > section {
+  background-color: #5fc1cc;
 }
 
 #particles-js {
