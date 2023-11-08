@@ -42,26 +42,45 @@
                     object-fit: cover;
                     border-radius: 1rem;
                     opacity: 0;
-                    transition: 2s ease-out;
+                    transition: $base-transition;
+
+                    &:not(:hover) {
+                        transition: 2s ease-out;
+                    }
 
                     &:first-of-type {
                         top: -9rem;
                         left: 0;
                         animation: floating-images 5s infinite linear;
-                        transition-delay: 1.5s;
+
+                        &:not(:hover) {
+                            transition-delay: 1.5s;
+                        }
                     }
 
                     &:nth-of-type(2) {
                         top: -16rem;
                         animation: floating-images 5s -1.67s infinite linear;
-                        transition-delay: 1.75s;
+
+                        &:not(:hover) {
+                            transition-delay: 1.75s;
+                        }
                     }
 
                     &:nth-of-type(3) {
                         top: -9rem;
                         right: 0;
                         animation: floating-images 5s -3.34s infinite linear;
-                        transition-delay: 2s;
+
+                        &:not(:hover) {
+                            transition-delay: 2s;
+                        }
+                    }
+
+                    &:hover {
+                        animation-play-state: paused;
+                        scale: 1.5;
+                        transition-delay: 0;
                     }
                 }
             }
