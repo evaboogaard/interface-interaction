@@ -10,6 +10,18 @@
   padding: 0;
 }
 
+@font-face {
+  font-family: 'mono';
+  font-weight: 100;
+  src: url("../assets/mono-light.woff2");
+}
+
+@font-face {
+  font-family: 'mono';
+  font-weight: 200;
+  src: url("../assets/mono-bold.woff2");
+}
+
 body {
   height: 100vh;
 }
@@ -23,18 +35,6 @@ body {
   border: 0;
   clip: rect(0, 0, 0, 0);
   overflow: hidden;
-}
-
-@font-face {
-  font-family: 'mono';
-  font-weight: 100;
-  src: url("../assets/mono-light.woff2");
-}
-
-@font-face {
-  font-family: 'mono';
-  font-weight: 200;
-  src: url("../assets/mono-bold.woff2");
 }
 
 h1,
@@ -398,6 +398,28 @@ li {
   scale: 1.1;
 }
 
+#television .screen .video-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#television .screen .video-wrapper video {
+  height: 100%;
+  position: absolute;
+  width: auto;
+  top: 0;
+  z-index: 300;
+  display: none;
+}
+
+#television .screen .video-wrapper video.visible {
+  display: block;
+}
+
 #television .side {
   width: 12.5%;
   height: 90%;
@@ -468,19 +490,23 @@ li {
   }
 }
 
-#television .side button:nth-of-type(2) {
+#television .side button.video-button {
   background-color: #19150f;
   width: 90%;
 }
 
+#television .side button.video-button::before {
+  display: none;
+}
+
 @media (min-width: 992px) {
-  #television .side button:nth-of-type(2) {
+  #television .side button.video-button {
     width: 70%;
   }
 }
 
 @media (min-width: 1200px) {
-  #television .side button:nth-of-type(2) {
+  #television .side button.video-button {
     width: 50%;
   }
 }

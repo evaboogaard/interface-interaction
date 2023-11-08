@@ -1,3 +1,4 @@
 import './particles.js';
 import './planets.js';
-import './audio.js';
+import './bg_audio.js';
+import './video.js';
