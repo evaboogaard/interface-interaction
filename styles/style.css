@@ -452,7 +452,7 @@ li {
           transform: translateY(100%);
 }
 
-.childhood {
+.phase.childhood, .phase.teen, .phase.horsin-around, .phase.biography, .phase.secretariat, .phase.philbert {
   position: absolute;
   z-index: 130;
   width: 80%;
@@ -464,19 +464,23 @@ li {
   transition: 2s ease-out;
 }
 
-.childhood.shown {
+.phase.childhood.shown, .phase.teen.shown, .phase.horsin-around.shown, .phase.biography.shown, .phase.secretariat.shown, .phase.philbert.shown {
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 1;
 }
 
-.childhood > section {
+.phase.childhood.shown > section > section:first-of-type img, .phase.teen.shown > section > section:first-of-type img, .phase.horsin-around.shown > section > section:first-of-type img, .phase.biography.shown > section > section:first-of-type img, .phase.secretariat.shown > section > section:first-of-type img, .phase.philbert.shown > section > section:first-of-type img {
+  opacity: 1;
+}
+
+.phase.childhood > section, .phase.teen > section, .phase.horsin-around > section, .phase.biography > section, .phase.secretariat > section, .phase.philbert > section {
   position: relative;
   -webkit-transform: translate(10%, 40vh);
           transform: translate(10%, 40vh);
 }
 
-.childhood > section > section:first-of-type {
+.phase.childhood > section > section:first-of-type, .phase.teen > section > section:first-of-type, .phase.horsin-around > section > section:first-of-type, .phase.biography > section > section:first-of-type, .phase.secretariat > section > section:first-of-type, .phase.philbert > section > section:first-of-type {
   top: -9rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -486,69 +490,165 @@ li {
           justify-content: center;
 }
 
-.childhood > section > section:first-of-type img {
+.phase.childhood > section > section:first-of-type img, .phase.teen > section > section:first-of-type img, .phase.horsin-around > section > section:first-of-type img, .phase.biography > section > section:first-of-type img, .phase.secretariat > section > section:first-of-type img, .phase.philbert > section > section:first-of-type img {
   position: absolute;
   width: 20rem;
   height: 8rem;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 1rem;
+  opacity: 0;
+  -webkit-transition: 2s ease-out;
+  transition: 2s ease-out;
 }
 
-.childhood > section > section:first-of-type img:first-of-type {
+.phase.childhood > section > section:first-of-type img:first-of-type, .phase.teen > section > section:first-of-type img:first-of-type, .phase.horsin-around > section > section:first-of-type img:first-of-type, .phase.biography > section > section:first-of-type img:first-of-type, .phase.secretariat > section > section:first-of-type img:first-of-type, .phase.philbert > section > section:first-of-type img:first-of-type {
   top: -9rem;
   left: 0;
   -webkit-animation: floating-images 5s infinite linear;
           animation: floating-images 5s infinite linear;
+  -webkit-transition-delay: 1.5s;
+          transition-delay: 1.5s;
 }
 
-.childhood > section > section:first-of-type img:nth-of-type(2) {
+.phase.childhood > section > section:first-of-type img:nth-of-type(2), .phase.teen > section > section:first-of-type img:nth-of-type(2), .phase.horsin-around > section > section:first-of-type img:nth-of-type(2), .phase.biography > section > section:first-of-type img:nth-of-type(2), .phase.secretariat > section > section:first-of-type img:nth-of-type(2), .phase.philbert > section > section:first-of-type img:nth-of-type(2) {
   top: -16rem;
   -webkit-animation: floating-images 5s -1.67s infinite linear;
           animation: floating-images 5s -1.67s infinite linear;
+  -webkit-transition-delay: 1.75s;
+          transition-delay: 1.75s;
 }
 
-.childhood > section > section:first-of-type img:nth-of-type(3) {
+.phase.childhood > section > section:first-of-type img:nth-of-type(3), .phase.teen > section > section:first-of-type img:nth-of-type(3), .phase.horsin-around > section > section:first-of-type img:nth-of-type(3), .phase.biography > section > section:first-of-type img:nth-of-type(3), .phase.secretariat > section > section:first-of-type img:nth-of-type(3), .phase.philbert > section > section:first-of-type img:nth-of-type(3) {
   top: -9rem;
   right: 0;
   -webkit-animation: floating-images 5s -3.34s infinite linear;
           animation: floating-images 5s -3.34s infinite linear;
+  -webkit-transition-delay: 2s;
+          transition-delay: 2s;
 }
 
-.childhood > section > section:last-of-type {
+.phase.childhood > section > section:last-of-type, .phase.teen > section > section:last-of-type, .phase.horsin-around > section > section:last-of-type, .phase.biography > section > section:last-of-type, .phase.secretariat > section > section:last-of-type, .phase.philbert > section > section:last-of-type {
   margin-top: 1rem;
   padding: 2rem;
   background-color: #070400;
   outline: 1rem solid #070400;
-  border: 2px solid #aeaaa5;
   border-radius: 1rem;
 }
 
-.childhood > section > section:last-of-type h2 {
+.phase.childhood > section > section:last-of-type h2, .phase.teen > section > section:last-of-type h2, .phase.horsin-around > section > section:last-of-type h2, .phase.biography > section > section:last-of-type h2, .phase.secretariat > section > section:last-of-type h2, .phase.philbert > section > section:last-of-type h2 {
   position: absolute;
   text-transform: uppercase;
   color: transparent;
 }
 
-.childhood > section > section:last-of-type h2::before {
+.phase.childhood > section > section:last-of-type h2::before, .phase.teen > section > section:last-of-type h2::before, .phase.horsin-around > section > section:last-of-type h2::before, .phase.biography > section > section:last-of-type h2::before, .phase.secretariat > section > section:last-of-type h2::before, .phase.philbert > section > section:last-of-type h2::before {
   content: attr(data-text);
   position: absolute;
-  border-bottom: 2px solid #aeaaa5;
-  color: #aeaaa5;
   overflow: hidden;
-  border-right: 1px solid #000;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  width: 0;
+}
+
+.phase.childhood > section > section:last-of-type ul, .phase.teen > section > section:last-of-type ul, .phase.horsin-around > section > section:last-of-type ul, .phase.biography > section > section:last-of-type ul, .phase.secretariat > section > section:last-of-type ul, .phase.philbert > section > section:last-of-type ul {
+  padding-top: 2rem;
+  list-style-position: inside;
+  list-style-type: square;
+}
+
+.phase.childhood > section > section:last-of-type ul li, .phase.teen > section > section:last-of-type ul li, .phase.horsin-around > section > section:last-of-type ul li, .phase.biography > section > section:last-of-type ul li, .phase.secretariat > section > section:last-of-type ul li, .phase.philbert > section > section:last-of-type ul li {
+  padding: 0.5rem 0;
+}
+
+.phase.childhood > section > section:last-of-type {
+  border: 2px solid #91857a;
+}
+
+.phase.childhood > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #91857a;
+  color: #91857a;
   -webkit-animation: type 2s steps(9) forwards;
           animation: type 2s steps(9) forwards;
-  white-space: nowrap;
 }
 
-.childhood > section > section:last-of-type ul {
-  padding-top: 2rem;
-}
-
-.childhood > section > section:last-of-type ul li {
+.phase.childhood > section > section:last-of-type ul li {
   color: #aeaaa5;
-  padding: 0.5rem 0;
+}
+
+.phase.teen > section > section:last-of-type {
+  border: 2px solid #4faab4;
+}
+
+.phase.teen > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #4faab4;
+  color: #4faab4;
+  -webkit-animation: type 2s steps(8) forwards;
+          animation: type 2s steps(8) forwards;
+}
+
+.phase.teen > section > section:last-of-type ul li {
+  color: #68d4de;
+}
+
+.phase.horsin-around > section > section:last-of-type {
+  border: 2px solid #ac3829;
+}
+
+.phase.horsin-around > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #ac3829;
+  color: #ac3829;
+  -webkit-animation: type 2s steps(12) forwards;
+          animation: type 2s steps(12) forwards;
+}
+
+.phase.horsin-around > section > section:last-of-type ul li {
+  color: #e14a31;
+}
+
+.phase.biography > section > section:last-of-type {
+  border: 2px solid #af7551;
+}
+
+.phase.biography > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #af7551;
+  color: #af7551;
+  -webkit-animation: type 2s steps(9) forwards;
+          animation: type 2s steps(9) forwards;
+}
+
+.phase.biography > section > section:last-of-type ul li {
+  color: #ce916d;
+}
+
+.phase.secretariat > section > section:last-of-type {
+  border: 2px solid #ead46f;
+}
+
+.phase.secretariat > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #ead46f;
+  color: #ead46f;
+  -webkit-animation: type 2s steps(11) forwards;
+          animation: type 2s steps(11) forwards;
+}
+
+.phase.secretariat > section > section:last-of-type ul li {
+  color: #f2e5aa;
+}
+
+.phase.philbert > section > section:last-of-type {
+  border: 2px solid #db9882;
+}
+
+.phase.philbert > section > section:last-of-type h2::before {
+  border-bottom: 2px solid #db9882;
+  color: #db9882;
+  -webkit-animation: type 2s steps(8) forwards;
+          animation: type 2s steps(8) forwards;
+}
+
+.phase.philbert > section > section:last-of-type ul li {
+  color: #efa68f;
 }
 
 #particles-js {

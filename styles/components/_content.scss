@@ -1,83 +1,232 @@
-.childhood {
-    position: absolute;
-    z-index: 130;
-    width: 80%;
-    height: 80%;
-    transform: translate(-100vw, -100vh);
-    opacity: 0;
-    transition: 2s ease-out;
+.phase {
+    &.childhood,
+    &.teen,
+    &.horsin-around,
+    &.biography,
+    &.secretariat,
+    &.philbert {
+        position: absolute;
+        z-index: 130;
+        width: 80%;
+        height: 80%;
+        transform: translate(-100vw, -100vh);
+        opacity: 0;
+        transition: 2s ease-out;
 
-    &.shown {
-        transform: translate(0, 0);
-        opacity: 1;
-    }
+        &.shown {
+            transform: translate(0, 0);
+            opacity: 1;
 
-    > section {
-        position: relative;
-        transform: translate(10%, 40vh);
-
-        > section:first-of-type {
-            top: -9rem;
-            display: flex;
-            justify-content: center;
-
-            img {
-                position: absolute;
-                width: 20rem;
-                height: 8rem;
-                object-fit: cover;
-                border-radius: 1rem;
-
-                &:first-of-type {
-                    top: -9rem;
-                    left: 0;
-                    animation: floating-images 5s infinite linear;
-                }
-
-                &:nth-of-type(2) {
-                    top: -16rem;
-
-                    animation: floating-images 5s -1.67s infinite linear;
-                }
-
-                &:nth-of-type(3) {
-                    top: -9rem;
-                    right: 0;
-                    animation: floating-images 5s -3.34s infinite linear;
+            > section {
+                > section:first-of-type {
+                    img {
+                        opacity: 1;
+                    }
                 }
             }
         }
 
-        > section:last-of-type {
-            margin-top: 1rem;
-            padding: 2rem;
-            background-color: $screen-color;
-            outline: 1rem solid $screen-color;
-            border: 2px solid $planet-one-primary;
-            border-radius: 1rem;
+        > section {
+            position: relative;
+            transform: translate(10%, 40vh);
 
-            h2 {
-                position: absolute;
-                text-transform: uppercase;
-                color: transparent;
+            > section:first-of-type {
+                top: -9rem;
+                display: flex;
+                justify-content: center;
 
-                &::before {
-                    content: attr(data-text);
+                img {
                     position: absolute;
-                    border-bottom: 2px solid $planet-one-primary;
-                    color: $planet-one-primary;
-                    overflow: hidden;
-                    border-right: 1px solid #000;
-                    animation: type 2s steps(9) forwards;
-                    white-space: nowrap;
+                    width: 20rem;
+                    height: 8rem;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                    opacity: 0;
+                    transition: 2s ease-out;
+
+                    &:first-of-type {
+                        top: -9rem;
+                        left: 0;
+                        animation: floating-images 5s infinite linear;
+                        transition-delay: 1.5s;
+                    }
+
+                    &:nth-of-type(2) {
+                        top: -16rem;
+                        animation: floating-images 5s -1.67s infinite linear;
+                        transition-delay: 1.75s;
+                    }
+
+                    &:nth-of-type(3) {
+                        top: -9rem;
+                        right: 0;
+                        animation: floating-images 5s -3.34s infinite linear;
+                        transition-delay: 2s;
+                    }
                 }
             }
 
-            ul {
-                padding-top: 2rem;
-                li {
-                    color: $planet-one-primary;
-                    padding: 0.5rem 0;
+            > section:last-of-type {
+                margin-top: 1rem;
+                padding: 2rem;
+                background-color: $screen-color;
+                outline: 1rem solid $screen-color;
+                border-radius: 1rem;
+
+                h2 {
+                    position: absolute;
+                    text-transform: uppercase;
+                    color: transparent;
+
+                    &::before {
+                        content: attr(data-text);
+                        position: absolute;
+                        overflow: hidden;
+                        animation-delay: 2s;
+                        width: 0;
+                    }
+                }
+
+                ul {
+                    padding-top: 2rem;
+                    list-style-position: inside;
+                    list-style-type: square;
+
+                    li {
+                        padding: 0.5rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &.childhood {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-one-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-one-secondary;
+                        color: $planet-one-secondary;
+                        animation: type 2s steps(9) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-one-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.teen {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-two-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-two-secondary;
+                        color: $planet-two-secondary;
+                        animation: type 2s steps(8) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-two-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.horsin-around {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-three-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-three-secondary;
+                        color: $planet-three-secondary;
+                        animation: type 2s steps(12) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-three-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.biography {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-four-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-four-secondary;
+                        color: $planet-four-secondary;
+                        animation: type 2s steps(9) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-four-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.secretariat {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-five-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-five-secondary;
+                        color: $planet-five-secondary;
+                        animation: type 2s steps(11) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-five-primary;
+                    }
+                }
+            }
+        }
+    }
+
+    &.philbert {
+        > section {
+            > section:last-of-type {
+                border: 2px solid $planet-six-secondary;
+
+                h2 {
+                    &::before {
+                        border-bottom: 2px solid $planet-six-secondary;
+                        color: $planet-six-secondary;
+                        animation: type 2s steps(8) forwards;
+                    }
+                }
+
+                ul {
+                    li {
+                        color: $planet-six-primary;
+                    }
                 }
             }
         }

@@ -33,17 +33,17 @@
 @keyframes floating-images {
     0% {
         transform: translateY(0);
-        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
+        box-shadow: 0 0 0.5rem $planet-img-box-shadow;
     }
 
     50% {
         transform: translateY(-1rem);
-        box-shadow: 0 0 2rem $planet-one-box-shadow;
+        box-shadow: 0 0 2rem $planet-img-box-shadow;
     }
 
     100% {
         transform: translateY(0);
-        box-shadow: 0 0 0.5rem $planet-one-box-shadow;
+        box-shadow: 0 0 0.5rem $planet-img-box-shadow;
     }
 }
 
