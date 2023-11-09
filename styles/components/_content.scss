@@ -136,6 +136,11 @@
                 ul {
                     li {
                         color: var(--planet-one-primary);
+
+                        &::selection {
+                            background-color: var(--planet-one-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }
@@ -158,6 +163,11 @@
                 ul {
                     li {
                         color: var(--planet-two-primary);
+
+                        &::selection {
+                            background-color: var(--planet-two-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }
@@ -180,6 +190,11 @@
                 ul {
                     li {
                         color: var(--planet-three-primary);
+
+                        &::selection {
+                            background-color: var(--planet-three-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }
@@ -202,6 +217,11 @@
                 ul {
                     li {
                         color: var(--planet-four-primary);
+
+                        &::selection {
+                            background-color: var(--planet-four-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }
@@ -216,7 +236,7 @@
                 h2 {
                     &::before {
                         border-bottom: 2px solid var(--planet-five-secondary);
-                        color: var(--planet-five-secondar);
+                        color: var(--planet-five-secondary);
                         animation: type 2s steps(11) forwards;
                     }
                 }
@@ -224,6 +244,11 @@
                 ul {
                     li {
                         color: var(--planet-five-primary);
+
+                        &::selection {
+                            background-color: var(--planet-five-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }
@@ -246,6 +271,11 @@
                 ul {
                     li {
                         color: var(--planet-six-primary);
+
+                        &::selection {
+                            background-color: var(--planet-six-primary);
+                            color: var(--screen-color);
+                        }
                     }
                 }
             }

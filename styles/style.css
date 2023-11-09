@@ -782,6 +782,16 @@ button:focus {
   color: var(--planet-one-primary);
 }
 
+.phase.childhood > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-one-primary);
+  color: var(--screen-color);
+}
+
+.phase.childhood > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-one-primary);
+  color: var(--screen-color);
+}
+
 .phase.teen > section > section:last-of-type {
   border: 2px solid var(--planet-two-secondary);
 }
@@ -795,6 +805,16 @@ button:focus {
 
 .phase.teen > section > section:last-of-type ul li {
   color: var(--planet-two-primary);
+}
+
+.phase.teen > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-two-primary);
+  color: var(--screen-color);
+}
+
+.phase.teen > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-two-primary);
+  color: var(--screen-color);
 }
 
 .phase.horsin-around > section > section:last-of-type {
@@ -812,6 +832,16 @@ button:focus {
   color: var(--planet-three-primary);
 }
 
+.phase.horsin-around > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-three-primary);
+  color: var(--screen-color);
+}
+
+.phase.horsin-around > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-three-primary);
+  color: var(--screen-color);
+}
+
 .phase.biography > section > section:last-of-type {
   border: 2px solid var(--planet-four-secondary);
 }
@@ -827,19 +857,39 @@ button:focus {
   color: var(--planet-four-primary);
 }
 
+.phase.biography > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-four-primary);
+  color: var(--screen-color);
+}
+
+.phase.biography > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-four-primary);
+  color: var(--screen-color);
+}
+
 .phase.secretariat > section > section:last-of-type {
   border: 2px solid var(--planet-five-secondary);
 }
 
 .phase.secretariat > section > section:last-of-type h2::before {
   border-bottom: 2px solid var(--planet-five-secondary);
-  color: var(--planet-five-secondar);
+  color: var(--planet-five-secondary);
   -webkit-animation: type 2s steps(11) forwards;
           animation: type 2s steps(11) forwards;
 }
 
 .phase.secretariat > section > section:last-of-type ul li {
   color: var(--planet-five-primary);
+}
+
+.phase.secretariat > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-five-primary);
+  color: var(--screen-color);
+}
+
+.phase.secretariat > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-five-primary);
+  color: var(--screen-color);
 }
 
 .phase.philbert > section > section:last-of-type {
@@ -855,6 +905,16 @@ button:focus {
 
 .phase.philbert > section > section:last-of-type ul li {
   color: var(--planet-six-primary);
+}
+
+.phase.philbert > section > section:last-of-type ul li::-moz-selection {
+  background-color: var(--planet-six-primary);
+  color: var(--screen-color);
+}
+
+.phase.philbert > section > section:last-of-type ul li::selection {
+  background-color: var(--planet-six-primary);
+  color: var(--screen-color);
 }
 
 .trip #television .screen {
