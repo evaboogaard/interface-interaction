@@ -6,33 +6,78 @@ $xl: 1200px;
 
 // COLOR VARIABLES
 
-$black: #000000;
-$white: #ffffff;
-$frame-color: rgb(48, 39, 28);
-$screen-color: rgb(7, 4, 0);
+:root {
+    --frame-color: rgb(48, 39, 28);
+    --frame-color-5-darker: rgb(43, 35, 25);
+    --frame-color-7-darker: rgb(37, 30, 22);
+    --frame-color-10-darker: rgb(24, 19, 14);
+    --frame-color-15-darker: rgb(14, 12, 8);
 
-$planet-img-box-shadow: #aeaaa581;
+    --frame-color-20-lighter: rgb(103, 84, 60);
+    --frame-color-30-lighter: rgb(130, 106, 76);
+    --frame-color-40-lighter: rgb(158, 128, 92);
 
-$planet-one-primary: #aeaaa5;
-$planet-one-secondary: #91857a;
+    --screen-color: rgb(7, 4, 0);
 
-$planet-two-primary: #68d4de;
-$planet-two-secondary: #4faab4;
+    --planet-img-box-shadow: #aeaaa581;
 
-$planet-three-primary: #e14a31;
-$planet-three-secondary: #ac3829;
+    --planet-one-primary: #aeaaa5;
+    --planet-one-secondary: #91857a;
 
-$planet-four-primary: #ce916d;
-$planet-four-secondary: #af7551;
+    --planet-two-primary: #68d4de;
+    --planet-two-secondary: #4faab4;
 
-$planet-five-primary: #f2e5aa;
-$planet-five-secondary: #ead46f;
+    --planet-three-primary: #e14a31;
+    --planet-three-secondary: #ac3829;
 
-$planet-six-primary: #efa68f;
-$planet-six-secondary: #db9882;
+    --planet-four-primary: #ce916d;
+    --planet-four-secondary: #af7551;
 
-$font-size-small: 0.9rem;
-$font-size-regular: 1rem;
-$font-size-large: 1.1rem;
+    --planet-five-primary: #f2e5aa;
+    --planet-five-secondary: #ead46f;
 
-$base-transition: 0.5s ease-out;
+    --planet-six-primary: #efa68f;
+    --planet-six-secondary: #db9882;
+
+    --font-size-small: 0.9rem;
+    --font-size-regular: 1rem;
+    --font-size-large: 1.1rem;
+
+    --base-transition: 0.5s ease-out;
+}
+
+@media (prefers-contrast: more) {
+    :root {
+        --frame-color: rgb(85, 60, 35);
+        --frame-color-5-darker: rgb(72, 51, 29);
+        --frame-color-7-darker: rgb(9, 7, 5);
+        --frame-color-10-darker: rgb(8, 7, 5);
+        --frame-color-15-darker: rgb(0, 0, 0);
+
+        --frame-color-20-lighter: rgb(103, 84, 60);
+        --frame-color-30-lighter: rgb(130, 106, 76);
+        --frame-color-40-lighter: rgb(158, 128, 92);
+
+        --screen-color: rgb(0, 0, 0);
+
+        --planet-img-box-shadow: #ffffff81;
+
+        --planet-one-primary: #d9d4cf;
+        --planet-one-secondary: #b3a89d;
+
+        --planet-two-primary: #a3d8dd;
+        --planet-two-secondary: #82c9d1;
+
+        --planet-three-primary: #ee9b8c;
+        --planet-three-secondary: #d16657;
+
+        --planet-four-primary: #edcab5;
+        --planet-four-secondary: #d09b7a;
+
+        --planet-five-primary: #f1edd9;
+        --planet-five-secondary: #efe4b0;
+
+        --planet-six-primary: #f7e3dd;
+        --planet-six-secondary: #e1bbae;
+    }
+}

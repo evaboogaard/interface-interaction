@@ -45,3 +45,7 @@ a,
 li {
     font-family: 'mono', monospace;
 }
+
+button:focus {
+    outline: 2px dotted white;
+}

@@ -6,6 +6,7 @@
     &.secretariat,
     &.philbert {
         position: absolute;
+        top: 0;
         z-index: 130;
         width: 80%;
         height: 80%;
@@ -42,7 +43,7 @@
                     object-fit: cover;
                     border-radius: 1rem;
                     opacity: 0;
-                    transition: $base-transition;
+                    transition: var(--base-transition);
 
                     &:not(:hover) {
                         transition: 2s ease-out;
@@ -88,8 +89,8 @@
             > section:last-of-type {
                 margin-top: 1rem;
                 padding: 2rem;
-                background-color: $screen-color;
-                outline: 1rem solid $screen-color;
+                background-color: var(--screen-color);
+                outline: 1rem solid var(--screen-color);
                 border-radius: 1rem;
 
                 h2 {
@@ -122,19 +123,19 @@
     &.childhood {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-one-secondary;
+                border: 2px solid var(--planet-one-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-one-secondary;
-                        color: $planet-one-secondary;
+                        border-bottom: 2px solid var(--planet-one-secondary);
+                        color: var(--planet-one-secondary);
                         animation: type 2s steps(9) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-one-primary;
+                        color: var(--planet-one-primary);
                     }
                 }
             }
@@ -144,19 +145,19 @@
     &.teen {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-two-secondary;
+                border: 2px solid var(--planet-two-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-two-secondary;
-                        color: $planet-two-secondary;
+                        border-bottom: 2px solid var(--planet-two-secondary);
+                        color: var(--planet-two-secondary);
                         animation: type 2s steps(8) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-two-primary;
+                        color: var(--planet-two-primary);
                     }
                 }
             }
@@ -166,19 +167,19 @@
     &.horsin-around {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-three-secondary;
+                border: 2px solid var(--planet-three-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-three-secondary;
-                        color: $planet-three-secondary;
+                        border-bottom: 2px solid var(--planet-three-secondary);
+                        color: var(--planet-three-secondary);
                         animation: type 2s steps(12) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-three-primary;
+                        color: var(--planet-three-primary);
                     }
                 }
             }
@@ -188,19 +189,19 @@
     &.biography {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-four-secondary;
+                border: 2px solid var(--planet-four-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-four-secondary;
-                        color: $planet-four-secondary;
+                        border-bottom: 2px solid var(--planet-four-secondary);
+                        color: var(--planet-four-secondary);
                         animation: type 2s steps(9) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-four-primary;
+                        color: var(--planet-four-primary);
                     }
                 }
             }
@@ -210,19 +211,19 @@
     &.secretariat {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-five-secondary;
+                border: 2px solid var(--planet-five-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-five-secondary;
-                        color: $planet-five-secondary;
+                        border-bottom: 2px solid var(--planet-five-secondary);
+                        color: var(--planet-five-secondar);
                         animation: type 2s steps(11) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-five-primary;
+                        color: var(--planet-five-primary);
                     }
                 }
             }
@@ -232,19 +233,19 @@
     &.philbert {
         > section {
             > section:last-of-type {
-                border: 2px solid $planet-six-secondary;
+                border: 2px solid var(--planet-six-secondary);
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid $planet-six-secondary;
-                        color: $planet-six-secondary;
+                        border-bottom: 2px solid var(--planet-six-secondary);
+                        color: var(--planet-six-secondary);
                         animation: type 2s steps(8) forwards;
                     }
                 }
 
                 ul {
                     li {
-                        color: $planet-six-primary;
+                        color: var(--planet-six-primary);
                     }
                 }
             }

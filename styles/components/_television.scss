@@ -7,15 +7,15 @@
     background-color: #e5e5f7;
     background-image: linear-gradient(
         45deg,
-        $frame-color 50%,
-        darken($frame-color, 3%) 50%
+        var(--frame-color) 50%,
+        var(--frame-color-5-darker) 50%
     );
     background-size: 0.5rem 1rem;
 
     .screen {
         width: 80%;
         height: 90%;
-        background-color: $screen-color;
+        background-color: var(--screen-color);
         transform: translate(4%, 5%);
         border-radius: 1rem;
         overflow: hidden;
@@ -31,156 +31,6 @@
             position: absolute;
             bottom: 0;
             animation: bojack-glow 5s infinite;
-        }
-
-        .planets {
-            position: relative;
-            width: 100%;
-            height: 100%;
-
-            button {
-                width: auto;
-                position: absolute;
-                border: none;
-                background-color: transparent;
-                cursor: pointer;
-                z-index: 100;
-                transition: $base-transition;
-
-                &:first-of-type {
-                    height: 10%;
-                    transform: translate(2vw, 20vh);
-
-                    img {
-                        animation-delay: -1s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                &:nth-of-type(2) {
-                    height: 9%;
-                    transform: translate(15vw, 30vh);
-
-                    img {
-                        animation-delay: -2.5s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                &:nth-of-type(3) {
-                    height: 13%;
-                    transform: translate(25vw, 15vh);
-
-                    img {
-                        animation-delay: -0.7s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                &:nth-of-type(4) {
-                    height: 10%;
-                    transform: translate(38vw, 35vh);
-
-                    img {
-                        animation-delay: 3s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                &:nth-of-type(5) {
-                    height: 12%;
-                    transform: translate(45vw, 20vh);
-
-                    img {
-                        animation-delay: -5.4s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                &:nth-of-type(6) {
-                    height: 12%;
-                    transform: translate(67vw, 30vh);
-
-                    img {
-                        animation-delay: -4.2s;
-                    }
-
-                    &.clicked {
-                        scale: 2;
-                        z-index: 150;
-                        transform: translate(-3vw, 0vh) rotate(360deg);
-
-                        img {
-                            scale: 2;
-                            animation: none;
-                        }
-                    }
-                }
-
-                img {
-                    height: 100%;
-                    width: auto;
-                    animation: space-wobble 6s infinite linear;
-                    transition: 0.5s ease-out;
-                }
-
-                &:hover {
-                    img {
-                        animation-play-state: paused;
-                        scale: 1.1;
-                    }
-                }
-            }
         }
 
         .video-wrapper {
@@ -219,28 +69,24 @@
             cursor: pointer;
             overflow: hidden;
             position: relative;
-            transition: $base-transition;
-            box-shadow: 0 0.15rem 0.1rem lighten($frame-color, 20%);
+            transition: var(--base-transition);
+            box-shadow: 0 0.15rem 0.1rem var(--frame-color-20-lighter);
+
+            @media (prefers-reduced-motion) {
+                transition: none;
+            }
 
             &:hover {
-                box-shadow: 0 0.35rem 0.3rem lighten($frame-color, 30%);
+                box-shadow: 0 0.35rem 0.3rem var(--frame-color-30-lighter);
             }
 
-            &::before {
-                content: '';
-                width: 50%;
-                position: absolute;
-                right: 0;
-                height: 3px;
-                background-color: lighten($frame-color, 40%);
-                transform-origin: left;
-                transition: 1s ease-out;
-                border-bottom: 1px dotted lighten($frame-color, 20%);
-            }
-
-            &:first-of-type {
-                background-color: darken($frame-color, 11%);
+            &.trip-button {
+                background-color: var(--frame-color-10-darker);
                 width: 90%;
+
+                &.clicked {
+                    background-color: var(--frame-color-15-darker);
+                }
 
                 @media (min-width: $lg) {
                     width: 70%;
@@ -252,11 +98,11 @@
             }
 
             &.video-button {
-                background-color: darken($frame-color, 7%);
+                background-color: var(--frame-color-7-darker);
                 width: 90%;
 
-                &::before {
-                    display: none;
+                &.clicked {
+                    background-color: var(--frame-color-10-darker);
                 }
 
                 @media (min-width: $lg) {
@@ -271,7 +117,7 @@
             &.audio-button {
                 width: 50%;
                 transform: translateY(100%);
-                background-color: darken($frame-color, 11%);
+                background-color: var(--frame-color-10-darker);
 
                 @media (min-width: $lg) {
                     width: 40%;
@@ -281,15 +127,42 @@
                     width: 30%;
                 }
 
+                &::before {
+                    content: '';
+                    width: 50%;
+                    position: absolute;
+                    right: 0;
+                    height: 3px;
+                    background-color: var(--frame-color-40-lighter);
+                    transform-origin: left;
+                    transition: 1s ease-out;
+                    border-bottom: 1px dotted var(--frame-color-20-lighter);
+                    @media (prefers-reduced-motion) {
+                        transition: none;
+                    }
+                }
+
                 &.audio-1 {
                     &::before {
-                        transform: rotate(120deg);
+                        transform: rotate(72deg);
                     }
                 }
 
                 &.audio-2 {
                     &::before {
-                        transform: rotate(240deg);
+                        transform: rotate(144deg);
+                    }
+                }
+
+                &.audio-3 {
+                    &::before {
+                        transform: rotate(216deg);
+                    }
+                }
+
+                &.audio-4 {
+                    &::before {
+                        transform: rotate(288deg);
                     }
                 }
             }
@@ -308,13 +181,17 @@
             &.playing {
                 div {
                     animation: speaker 2s linear infinite;
+
+                    @media (prefers-reduced-motion) {
+                        animation: none;
+                    }
                 }
             }
 
             div {
                 width: 100%;
                 height: 4px;
-                background-color: darken($frame-color, 11%);
+                background-color: var(--frame-color-10-darker);
                 border-radius: 1rem;
 
                 &:nth-of-type(2) {
@@ -354,19 +231,5 @@
                 }
             }
         }
-    }
-}
-
-@keyframes speaker {
-    0% {
-        transform: scaleX(1);
-    }
-
-    50% {
-        transform: scaleX(0.5);
-    }
-
-    100% {
-        transform: scaleX(1);
     }
 }

@@ -21,35 +21,41 @@ const planetSixButton = document.querySelector(
 );
 const planetSixSection = document.querySelector('.planets .philbert');
 
-// const planetAudio = new Audio('audio/spark.mp3');
-// planetAudio.volume = 0.1;
+const planetClick = new Audio('audio/typewriter.wav');
+planetClick.volume = 0.3;
 
 planetOneButton.addEventListener('click', () => {
     planetOneButton.classList.toggle('clicked');
     planetOneSection.classList.toggle('shown');
+    planetClick.play();
 });
 
 planetTwoButton.addEventListener('click', () => {
     planetTwoButton.classList.toggle('clicked');
     planetTwoSection.classList.toggle('shown');
+    planetClick.play();
 });
 
 planetThreeButton.addEventListener('click', () => {
     planetThreeButton.classList.toggle('clicked');
     planetThreeSection.classList.toggle('shown');
+    planetClick.play();
 });
 
 planetFourButton.addEventListener('click', () => {
     planetFourButton.classList.toggle('clicked');
     planetFourSection.classList.toggle('shown');
+    planetClick.play();
 });
 
 planetFiveButton.addEventListener('click', () => {
     planetFiveButton.classList.toggle('clicked');
     planetFiveSection.classList.toggle('shown');
+    planetClick.play();
 });
 
 planetSixButton.addEventListener('click', () => {
     planetSixButton.classList.toggle('clicked');
     planetSixSection.classList.toggle('shown');
+    planetClick.play();
 });

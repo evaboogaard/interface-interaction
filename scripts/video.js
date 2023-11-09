@@ -15,6 +15,7 @@ videoButton.addEventListener('click', () => {
             }
         });
         currentVideoIndex++;
+        videoButton.classList.add('clicked');
     } else {
         // No video to play, pause all videos and remove visibility
         videos.forEach((video) => {
@@ -22,5 +23,6 @@ videoButton.addEventListener('click', () => {
             video.classList.remove('visible');
         });
         currentVideoIndex = 0;
+        videoButton.classList.remove('clicked');
     }
 });
