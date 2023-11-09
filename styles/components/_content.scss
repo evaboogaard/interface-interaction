@@ -10,13 +10,13 @@
         z-index: 130;
         width: 80%;
         height: 80%;
-        transform: translate(-100vw, -100vh);
         opacity: 0;
+        transform: translate(-100vw, -100vh);
         transition: 2s ease-out;
 
         &.shown {
-            transform: translate(0, 0);
             opacity: 1;
+            transform: translate(0, 0);
 
             > section {
                 > section:first-of-type {
@@ -40,9 +40,9 @@
                     position: absolute;
                     width: 20rem;
                     height: 8rem;
-                    object-fit: cover;
-                    border-radius: 1rem;
                     opacity: 0;
+                    border-radius: 1rem;
+                    object-fit: cover;
                     transition: var(--base-transition);
 
                     &:not(:hover) {
@@ -90,20 +90,20 @@
                 margin-top: 1rem;
                 padding: 2rem;
                 background-color: var(--screen-color);
-                outline: 1rem solid var(--screen-color);
                 border-radius: 1rem;
+                outline: 1rem solid var(--screen-color);
 
                 h2 {
                     position: absolute;
-                    text-transform: uppercase;
                     color: transparent;
+                    text-transform: uppercase;
 
                     &::before {
-                        content: attr(data-text);
                         position: absolute;
-                        overflow: hidden;
-                        animation-delay: 2s;
                         width: 0;
+                        animation-delay: 2s;
+                        content: attr(data-text);
+                        overflow: hidden;
                     }
                 }
 
@@ -127,8 +127,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-one-secondary);
                         color: var(--planet-one-secondary);
+                        border-bottom: 2px solid var(--planet-one-secondary);
                         animation: type 2s steps(9) forwards;
                     }
                 }
@@ -138,8 +138,8 @@
                         color: var(--planet-one-primary);
 
                         &::selection {
-                            background-color: var(--planet-one-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-one-primary);
                         }
                     }
                 }
@@ -154,8 +154,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-two-secondary);
                         color: var(--planet-two-secondary);
+                        border-bottom: 2px solid var(--planet-two-secondary);
                         animation: type 2s steps(8) forwards;
                     }
                 }
@@ -165,8 +165,8 @@
                         color: var(--planet-two-primary);
 
                         &::selection {
-                            background-color: var(--planet-two-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-two-primary);
                         }
                     }
                 }
@@ -181,8 +181,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-three-secondary);
                         color: var(--planet-three-secondary);
+                        border-bottom: 2px solid var(--planet-three-secondary);
                         animation: type 2s steps(12) forwards;
                     }
                 }
@@ -192,8 +192,8 @@
                         color: var(--planet-three-primary);
 
                         &::selection {
-                            background-color: var(--planet-three-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-three-primary);
                         }
                     }
                 }
@@ -208,8 +208,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-four-secondary);
                         color: var(--planet-four-secondary);
+                        border-bottom: 2px solid var(--planet-four-secondary);
                         animation: type 2s steps(9) forwards;
                     }
                 }
@@ -219,8 +219,8 @@
                         color: var(--planet-four-primary);
 
                         &::selection {
-                            background-color: var(--planet-four-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-four-primary);
                         }
                     }
                 }
@@ -235,8 +235,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-five-secondary);
                         color: var(--planet-five-secondary);
+                        border-bottom: 2px solid var(--planet-five-secondary);
                         animation: type 2s steps(11) forwards;
                     }
                 }
@@ -246,8 +246,8 @@
                         color: var(--planet-five-primary);
 
                         &::selection {
-                            background-color: var(--planet-five-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-five-primary);
                         }
                     }
                 }
@@ -262,8 +262,8 @@
 
                 h2 {
                     &::before {
-                        border-bottom: 2px solid var(--planet-six-secondary);
                         color: var(--planet-six-secondary);
+                        border-bottom: 2px solid var(--planet-six-secondary);
                         animation: type 2s steps(8) forwards;
                     }
                 }
@@ -273,8 +273,8 @@
                         color: var(--planet-six-primary);
 
                         &::selection {
-                            background-color: var(--planet-six-primary);
                             color: var(--screen-color);
+                            background-color: var(--planet-six-primary);
                         }
                     }
                 }

@@ -4,6 +4,7 @@
   --frame-color-7-darker: rgb(37, 30, 22);
   --frame-color-10-darker: rgb(24, 19, 14);
   --frame-color-15-darker: rgb(14, 12, 8);
+  --frame-color-20-darker: rgb(0, 0, 0);
   --frame-color-20-lighter: rgb(103, 84, 60);
   --frame-color-30-lighter: rgb(130, 106, 76);
   --frame-color-40-lighter: rgb(158, 128, 92);
@@ -155,31 +156,31 @@ button:focus {
 
 @-webkit-keyframes bojack-glow {
   0% {
-    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
-            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
+            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
   }
   50% {
-    -webkit-filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.18));
-            filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.18));
+    -webkit-filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.4));
+            filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.4));
   }
   100% {
-    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
-            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
+            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
   }
 }
 
 @keyframes bojack-glow {
   0% {
-    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
-            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
+            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
   }
   50% {
-    -webkit-filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.18));
-            filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.18));
+    -webkit-filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.4));
+            filter: drop-shadow(0 0 3rem rgba(255, 244, 217, 0.4));
   }
   100% {
-    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
-            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.13));
+    -webkit-filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
+            filter: drop-shadow(0 0 2.5rem rgba(255, 244, 217, 0.2));
   }
 }
 
@@ -346,40 +347,40 @@ button:focus {
 }
 
 #television {
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  overflow: hidden;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  width: 100%;
+  height: 100%;
   background-color: #e5e5f7;
   background-image: linear-gradient(45deg, var(--frame-color) 50%, var(--frame-color-5-darker) 50%);
   background-size: 0.5rem 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
 }
 
 #television .screen {
   width: 80%;
   height: 90%;
   background-color: var(--screen-color);
-  -webkit-transform: translate(4%, 5%);
-          transform: translate(4%, 5%);
   border-radius: 1rem;
   overflow: hidden;
+  -webkit-transform: translate(4%, 5%);
+          transform: translate(4%, 5%);
 }
 
 #television .screen #particles-js {
+  z-index: 10;
   width: 100%;
   height: 100%;
-  z-index: 10;
 }
 
 #television .screen svg {
-  z-index: 100;
   position: absolute;
   bottom: 0;
+  z-index: 100;
   -webkit-animation: bojack-glow 5s infinite;
           animation: bojack-glow 5s infinite;
 }
@@ -394,12 +395,12 @@ button:focus {
 }
 
 #television .screen .video-wrapper video {
-  height: 100%;
   position: absolute;
-  width: auto;
   top: 0;
   z-index: 300;
   display: none;
+  width: auto;
+  height: 100%;
 }
 
 #television .screen .video-wrapper video.visible {
@@ -407,37 +408,37 @@ button:focus {
 }
 
 #television .side {
-  width: 12.5%;
-  height: 90%;
-  -webkit-transform: translate(-10%, 20%);
-          transform: translate(-10%, 20%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 12.5%;
+  height: 90%;
+  gap: 2.5%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  gap: 2.5%;
+  -webkit-transform: translate(-10%, 20%);
+          transform: translate(-10%, 20%);
 }
 
 #television .side button {
-  aspect-ratio: 1;
+  position: relative;
   border: none;
   border-radius: 50%;
-  cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  -webkit-transition: var(--base-transition);
-  transition: var(--base-transition);
+  aspect-ratio: 1;
   -webkit-box-shadow: 0 0.15rem 0.1rem var(--frame-color-20-lighter);
           box-shadow: 0 0.15rem 0.1rem var(--frame-color-20-lighter);
+  cursor: pointer;
+  overflow: hidden;
+  -webkit-transition: var(--base-transition);
+  transition: var(--base-transition);
 }
 
 @media (prefers-reduced-motion) {
@@ -453,12 +454,13 @@ button:focus {
 }
 
 #television .side button.trip-button {
-  background-color: var(--frame-color-10-darker);
   width: 90%;
+  background-color: var(--frame-color-10-darker);
 }
 
 #television .side button.trip-button.clicked {
-  background-color: var(--frame-color-15-darker);
+  background-color: var(--frame-color-20-darker);
+  border: 2px dotted var(--frame-color-20-lighter);
 }
 
 @media (min-width: 992px) {
@@ -474,12 +476,13 @@ button:focus {
 }
 
 #television .side button.video-button {
-  background-color: var(--frame-color-7-darker);
   width: 90%;
+  background-color: var(--frame-color-7-darker);
 }
 
 #television .side button.video-button.clicked {
-  background-color: var(--frame-color-10-darker);
+  background-color: var(--frame-color-15-darker);
+  border: 2px dotted var(--frame-color-30-lighter);
 }
 
 @media (min-width: 992px) {
@@ -496,9 +499,9 @@ button:focus {
 
 #television .side button.audio-button {
   width: 50%;
+  background-color: var(--frame-color-10-darker);
   -webkit-transform: translateY(100%);
           transform: translateY(100%);
-  background-color: var(--frame-color-10-darker);
 }
 
 @media (min-width: 992px) {
@@ -514,17 +517,17 @@ button:focus {
 }
 
 #television .side button.audio-button::before {
-  content: '';
-  width: 50%;
   position: absolute;
   right: 0;
+  width: 50%;
   height: 3px;
   background-color: var(--frame-color-40-lighter);
+  border-bottom: 1px dotted var(--frame-color-20-lighter);
+  content: '';
   -webkit-transform-origin: left;
           transform-origin: left;
   -webkit-transition: 1s ease-out;
   transition: 1s ease-out;
-  border-bottom: 1px dotted var(--frame-color-20-lighter);
 }
 
 @media (prefers-reduced-motion) {
@@ -561,14 +564,14 @@ button:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 20%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  height: 20%;
-  width: 100%;
 }
 
 #television .side .speaker.playing div {
@@ -641,17 +644,17 @@ button:focus {
   z-index: 130;
   width: 80%;
   height: 80%;
+  opacity: 0;
   -webkit-transform: translate(-100vw, -100vh);
           transform: translate(-100vw, -100vh);
-  opacity: 0;
   -webkit-transition: 2s ease-out;
   transition: 2s ease-out;
 }
 
 .phase.childhood.shown, .phase.teen.shown, .phase.horsin-around.shown, .phase.biography.shown, .phase.secretariat.shown, .phase.philbert.shown {
+  opacity: 1;
   -webkit-transform: translate(0, 0);
           transform: translate(0, 0);
-  opacity: 1;
 }
 
 .phase.childhood.shown > section > section:first-of-type img, .phase.teen.shown > section > section:first-of-type img, .phase.horsin-around.shown > section > section:first-of-type img, .phase.biography.shown > section > section:first-of-type img, .phase.secretariat.shown > section > section:first-of-type img, .phase.philbert.shown > section > section:first-of-type img {
@@ -678,10 +681,10 @@ button:focus {
   position: absolute;
   width: 20rem;
   height: 8rem;
+  opacity: 0;
+  border-radius: 1rem;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 1rem;
-  opacity: 0;
   -webkit-transition: var(--base-transition);
   transition: var(--base-transition);
 }
@@ -738,23 +741,23 @@ button:focus {
   margin-top: 1rem;
   padding: 2rem;
   background-color: var(--screen-color);
-  outline: 1rem solid var(--screen-color);
   border-radius: 1rem;
+  outline: 1rem solid var(--screen-color);
 }
 
 .phase.childhood > section > section:last-of-type h2, .phase.teen > section > section:last-of-type h2, .phase.horsin-around > section > section:last-of-type h2, .phase.biography > section > section:last-of-type h2, .phase.secretariat > section > section:last-of-type h2, .phase.philbert > section > section:last-of-type h2 {
   position: absolute;
-  text-transform: uppercase;
   color: transparent;
+  text-transform: uppercase;
 }
 
 .phase.childhood > section > section:last-of-type h2::before, .phase.teen > section > section:last-of-type h2::before, .phase.horsin-around > section > section:last-of-type h2::before, .phase.biography > section > section:last-of-type h2::before, .phase.secretariat > section > section:last-of-type h2::before, .phase.philbert > section > section:last-of-type h2::before {
-  content: attr(data-text);
   position: absolute;
-  overflow: hidden;
+  width: 0;
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
-  width: 0;
+  content: attr(data-text);
+  overflow: hidden;
 }
 
 .phase.childhood > section > section:last-of-type ul, .phase.teen > section > section:last-of-type ul, .phase.horsin-around > section > section:last-of-type ul, .phase.biography > section > section:last-of-type ul, .phase.secretariat > section > section:last-of-type ul, .phase.philbert > section > section:last-of-type ul {
@@ -772,8 +775,8 @@ button:focus {
 }
 
 .phase.childhood > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-one-secondary);
   color: var(--planet-one-secondary);
+  border-bottom: 2px solid var(--planet-one-secondary);
   -webkit-animation: type 2s steps(9) forwards;
           animation: type 2s steps(9) forwards;
 }
@@ -783,13 +786,13 @@ button:focus {
 }
 
 .phase.childhood > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-one-primary);
   color: var(--screen-color);
+  background-color: var(--planet-one-primary);
 }
 
 .phase.childhood > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-one-primary);
   color: var(--screen-color);
+  background-color: var(--planet-one-primary);
 }
 
 .phase.teen > section > section:last-of-type {
@@ -797,8 +800,8 @@ button:focus {
 }
 
 .phase.teen > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-two-secondary);
   color: var(--planet-two-secondary);
+  border-bottom: 2px solid var(--planet-two-secondary);
   -webkit-animation: type 2s steps(8) forwards;
           animation: type 2s steps(8) forwards;
 }
@@ -808,13 +811,13 @@ button:focus {
 }
 
 .phase.teen > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-two-primary);
   color: var(--screen-color);
+  background-color: var(--planet-two-primary);
 }
 
 .phase.teen > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-two-primary);
   color: var(--screen-color);
+  background-color: var(--planet-two-primary);
 }
 
 .phase.horsin-around > section > section:last-of-type {
@@ -822,8 +825,8 @@ button:focus {
 }
 
 .phase.horsin-around > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-three-secondary);
   color: var(--planet-three-secondary);
+  border-bottom: 2px solid var(--planet-three-secondary);
   -webkit-animation: type 2s steps(12) forwards;
           animation: type 2s steps(12) forwards;
 }
@@ -833,13 +836,13 @@ button:focus {
 }
 
 .phase.horsin-around > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-three-primary);
   color: var(--screen-color);
+  background-color: var(--planet-three-primary);
 }
 
 .phase.horsin-around > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-three-primary);
   color: var(--screen-color);
+  background-color: var(--planet-three-primary);
 }
 
 .phase.biography > section > section:last-of-type {
@@ -847,8 +850,8 @@ button:focus {
 }
 
 .phase.biography > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-four-secondary);
   color: var(--planet-four-secondary);
+  border-bottom: 2px solid var(--planet-four-secondary);
   -webkit-animation: type 2s steps(9) forwards;
           animation: type 2s steps(9) forwards;
 }
@@ -858,13 +861,13 @@ button:focus {
 }
 
 .phase.biography > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-four-primary);
   color: var(--screen-color);
+  background-color: var(--planet-four-primary);
 }
 
 .phase.biography > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-four-primary);
   color: var(--screen-color);
+  background-color: var(--planet-four-primary);
 }
 
 .phase.secretariat > section > section:last-of-type {
@@ -872,8 +875,8 @@ button:focus {
 }
 
 .phase.secretariat > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-five-secondary);
   color: var(--planet-five-secondary);
+  border-bottom: 2px solid var(--planet-five-secondary);
   -webkit-animation: type 2s steps(11) forwards;
           animation: type 2s steps(11) forwards;
 }
@@ -883,13 +886,13 @@ button:focus {
 }
 
 .phase.secretariat > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-five-primary);
   color: var(--screen-color);
+  background-color: var(--planet-five-primary);
 }
 
 .phase.secretariat > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-five-primary);
   color: var(--screen-color);
+  background-color: var(--planet-five-primary);
 }
 
 .phase.philbert > section > section:last-of-type {
@@ -897,8 +900,8 @@ button:focus {
 }
 
 .phase.philbert > section > section:last-of-type h2::before {
-  border-bottom: 2px solid var(--planet-six-secondary);
   color: var(--planet-six-secondary);
+  border-bottom: 2px solid var(--planet-six-secondary);
   -webkit-animation: type 2s steps(8) forwards;
           animation: type 2s steps(8) forwards;
 }
@@ -908,13 +911,13 @@ button:focus {
 }
 
 .phase.philbert > section > section:last-of-type ul li::-moz-selection {
-  background-color: var(--planet-six-primary);
   color: var(--screen-color);
+  background-color: var(--planet-six-primary);
 }
 
 .phase.philbert > section > section:last-of-type ul li::selection {
-  background-color: var(--planet-six-primary);
   color: var(--screen-color);
+  background-color: var(--planet-six-primary);
 }
 
 .trip #television .screen {
@@ -969,32 +972,32 @@ button:focus {
 
 .planets {
   position: relative;
+  left: 0;
   width: 100%;
   height: 100%;
-  left: 0;
 }
 
 .planets .buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100%;
   width: 100%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  height: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .planets .buttons button {
-  width: auto;
   position: absolute;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
   z-index: 100;
+  width: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   -webkit-transition: var(--base-transition);
   transition: var(--base-transition);
 }
@@ -1007,8 +1010,8 @@ button:focus {
 }
 
 .planets .buttons button:first-of-type {
-  height: 6rem;
   left: 10vw;
+  height: 6rem;
   -webkit-transform: translate(0, -25vh);
           transform: translate(0, -25vh);
 }
@@ -1019,8 +1022,8 @@ button:focus {
 }
 
 .planets .buttons button:first-of-type.clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-9vw, -22vh) rotate(360deg);
           transform: translate(-9vw, -22vh) rotate(360deg);
 }
@@ -1032,8 +1035,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(2) {
-  height: 5.5rem;
   left: 20vw;
+  height: 5.5rem;
   -webkit-transform: translate(0, -5vh);
           transform: translate(0, -5vh);
 }
@@ -1044,8 +1047,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(2).clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-14vw, -22vh) rotate(360deg);
           transform: translate(-14vw, -22vh) rotate(360deg);
 }
@@ -1057,8 +1060,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(3) {
-  height: 7rem;
   left: 30vw;
+  height: 7rem;
   -webkit-transform: translate(0, -30vh);
           transform: translate(0, -30vh);
 }
@@ -1069,8 +1072,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(3).clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-18vw, -22vh) rotate(360deg);
           transform: translate(-18vw, -22vh) rotate(360deg);
 }
@@ -1082,8 +1085,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(4) {
-  height: 6.5rem;
   left: 40vw;
+  height: 6.5rem;
   -webkit-transform: translate(0, -10vh);
           transform: translate(0, -10vh);
 }
@@ -1094,8 +1097,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(4).clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-24vw, -22vh) rotate(360deg);
           transform: translate(-24vw, -22vh) rotate(360deg);
 }
@@ -1107,8 +1110,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(5) {
-  height: 7rem;
   left: 50vw;
+  height: 7rem;
   -webkit-transform: translate(0, -25vh);
           transform: translate(0, -25vh);
 }
@@ -1119,8 +1122,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(5).clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-30vw, -22vh) rotate(360deg);
           transform: translate(-30vw, -22vh) rotate(360deg);
 }
@@ -1132,8 +1135,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(6) {
-  height: 6rem;
   left: 60vw;
+  height: 6rem;
   -webkit-transform: translate(0, -5vh);
           transform: translate(0, -5vh);
 }
@@ -1144,8 +1147,8 @@ button:focus {
 }
 
 .planets .buttons button:nth-of-type(6).clicked {
-  scale: 2;
   z-index: 150;
+  scale: 2;
   -webkit-transform: translate(-34vw, -22vh) rotate(360deg);
           transform: translate(-34vw, -22vh) rotate(360deg);
 }
@@ -1157,8 +1160,8 @@ button:focus {
 }
 
 .planets .buttons button img {
-  height: 100%;
   width: auto;
+  height: 100%;
   -webkit-animation: space-wobble 6s infinite linear;
           animation: space-wobble 6s infinite linear;
   -webkit-transition: 0.5s ease-out;
@@ -1180,9 +1183,9 @@ button:focus {
 
 #particles-js {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
-  top: 0;
 }
 
 @media (prefers-reduced-motion) {

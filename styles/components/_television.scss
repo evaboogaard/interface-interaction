@@ -1,9 +1,7 @@
 #television {
+    display: flex;
     width: 100%;
     height: 100%;
-    display: flex;
-    overflow: hidden;
-    justify-content: space-between;
     background-color: #e5e5f7;
     background-image: linear-gradient(
         45deg,
@@ -11,25 +9,27 @@
         var(--frame-color-5-darker) 50%
     );
     background-size: 0.5rem 1rem;
+    justify-content: space-between;
+    overflow: hidden;
 
     .screen {
         width: 80%;
         height: 90%;
         background-color: var(--screen-color);
-        transform: translate(4%, 5%);
         border-radius: 1rem;
         overflow: hidden;
+        transform: translate(4%, 5%);
 
         #particles-js {
+            z-index: 10;
             width: 100%;
             height: 100%;
-            z-index: 10;
         }
 
         svg {
-            z-index: 100;
             position: absolute;
             bottom: 0;
+            z-index: 100;
             animation: bojack-glow 5s infinite;
         }
 
@@ -38,12 +38,12 @@
             justify-content: center;
 
             video {
-                height: 100%;
                 position: absolute;
-                width: auto;
                 top: 0;
                 z-index: 300;
                 display: none;
+                width: auto;
+                height: 100%;
 
                 &.visible {
                     display: block;
@@ -53,24 +53,24 @@
     }
 
     .side {
+        display: flex;
         width: 12.5%;
         height: 90%;
-        transform: translate(-10%, 20%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
         gap: 2.5%;
+        align-items: center;
+        flex-direction: column;
+        justify-content: flex-start;
+        transform: translate(-10%, 20%);
 
         button {
-            aspect-ratio: 1;
+            position: relative;
             border: none;
             border-radius: 50%;
+            aspect-ratio: 1;
+            box-shadow: 0 0.15rem 0.1rem var(--frame-color-20-lighter);
             cursor: pointer;
             overflow: hidden;
-            position: relative;
             transition: var(--base-transition);
-            box-shadow: 0 0.15rem 0.1rem var(--frame-color-20-lighter);
 
             @media (prefers-reduced-motion) {
                 transition: none;
@@ -81,11 +81,12 @@
             }
 
             &.trip-button {
-                background-color: var(--frame-color-10-darker);
                 width: 90%;
+                background-color: var(--frame-color-10-darker);
 
                 &.clicked {
-                    background-color: var(--frame-color-15-darker);
+                    background-color: var(--frame-color-20-darker);
+                    border: 2px dotted var(--frame-color-20-lighter);
                 }
 
                 @media (min-width: $lg) {
@@ -98,11 +99,12 @@
             }
 
             &.video-button {
-                background-color: var(--frame-color-7-darker);
                 width: 90%;
+                background-color: var(--frame-color-7-darker);
 
                 &.clicked {
-                    background-color: var(--frame-color-10-darker);
+                    background-color: var(--frame-color-15-darker);
+                    border: 2px dotted var(--frame-color-30-lighter);
                 }
 
                 @media (min-width: $lg) {
@@ -116,8 +118,8 @@
 
             &.audio-button {
                 width: 50%;
-                transform: translateY(100%);
                 background-color: var(--frame-color-10-darker);
+                transform: translateY(100%);
 
                 @media (min-width: $lg) {
                     width: 40%;
@@ -128,15 +130,16 @@
                 }
 
                 &::before {
-                    content: '';
-                    width: 50%;
                     position: absolute;
                     right: 0;
+                    width: 50%;
                     height: 3px;
                     background-color: var(--frame-color-40-lighter);
+                    border-bottom: 1px dotted var(--frame-color-20-lighter);
+                    content: '';
                     transform-origin: left;
                     transition: 1s ease-out;
-                    border-bottom: 1px dotted var(--frame-color-20-lighter);
+
                     @media (prefers-reduced-motion) {
                         transition: none;
                     }
@@ -173,10 +176,10 @@
             right: 0;
             bottom: 18%;
             display: flex;
+            width: 100%;
+            height: 20%;
             flex-direction: column;
             justify-content: space-around;
-            height: 20%;
-            width: 100%;
 
             &.playing {
                 div {
